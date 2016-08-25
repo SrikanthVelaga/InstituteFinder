@@ -1,0 +1,21 @@
+PODS:
+  - MFSideMenu (0.5.5)
+
+DEPENDENCIES:
+  - MFSideMenu (from `https://github.com/mikefrederick/MFSideMenu`)
+
+EXTERNAL SOURCES:
+  MFSideMenu:
+    :git: https://github.com/mikefrederick/MFSideMenu
+
+CHECKOUT OPTIONS:
+  MFSideMenu:
+    :commit: ac0639391df9f4a81822d3272ac8c6feef338852
+    :git: https://github.com/mikefrederick/MFSideMenu
+
+SPEC CHECKSUMS:
+  MFSideMenu: 268122e6894f2747fc3a2b48578100b232506c60
+
+PODFILE CHECKSUM: ac5d42c933943c7f5f1bc6d270176ca64626ff2f
+
+COCOAPODS: 1.0.1
