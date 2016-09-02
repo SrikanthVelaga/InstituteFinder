@@ -14,6 +14,10 @@
 		2B001AB11D6F3EE7002FD720 /* InstituteFinder.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2B001AAF1D6F3EE7002FD720 /* InstituteFinder.xcdatamodeld */; };
 		2B001AB31D6F3EE7002FD720 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2B001AB21D6F3EE7002FD720 /* Assets.xcassets */; };
 		2B001AB61D6F3EE7002FD720 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B001AB41D6F3EE7002FD720 /* LaunchScreen.storyboard */; };
+		6DB158431D79906400D535E7 /* leftViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DB158421D79906400D535E7 /* leftViewController.m */; };
+		6DB158461D79907000D535E7 /* rightViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DB158451D79907000D535E7 /* rightViewController.m */; };
+		6DB158481D79951600D535E7 /* left.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DB158471D79951600D535E7 /* left.png */; };
+		6DB1584A1D79951E00D535E7 /* right.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DB158491D79951E00D535E7 /* right.png */; };
 		EE3EDB1DB89A93E9F518890A /* libPods-InstituteFinder.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 516C822A92CA063B33E27D8F /* libPods-InstituteFinder.a */; };
 /* End PBXBuildFile section */
 
@@ -30,6 +34,12 @@
 		2B001AB51D6F3EE7002FD720 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2B001AB71D6F3EE7002FD720 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		516C822A92CA063B33E27D8F /* libPods-InstituteFinder.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-InstituteFinder.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6DB158411D79906400D535E7 /* leftViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = leftViewController.h; sourceTree = "<group>"; };
+		6DB158421D79906400D535E7 /* leftViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = leftViewController.m; sourceTree = "<group>"; };
+		6DB158441D79907000D535E7 /* rightViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rightViewController.h; sourceTree = "<group>"; };
+		6DB158451D79907000D535E7 /* rightViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = rightViewController.m; sourceTree = "<group>"; };
+		6DB158471D79951600D535E7 /* left.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = left.png; sourceTree = "<group>"; };
+		6DB158491D79951E00D535E7 /* right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = right.png; sourceTree = "<group>"; };
 		831FD68C7AF9C06D728ED4FF /* Pods-InstituteFinder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstituteFinder.release.xcconfig"; path = "Pods/Target Support Files/Pods-InstituteFinder/Pods-InstituteFinder.release.xcconfig"; sourceTree = "<group>"; };
 		AE8511C819AEF3BE63427B01 /* Pods-InstituteFinder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstituteFinder.debug.xcconfig"; path = "Pods/Target Support Files/Pods-InstituteFinder/Pods-InstituteFinder.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -71,6 +81,10 @@
 				2B001AA71D6F3EE7002FD720 /* AppDelegate.m */,
 				2B001AA91D6F3EE7002FD720 /* ViewController.h */,
 				2B001AAA1D6F3EE7002FD720 /* ViewController.m */,
+				6DB158411D79906400D535E7 /* leftViewController.h */,
+				6DB158421D79906400D535E7 /* leftViewController.m */,
+				6DB158441D79907000D535E7 /* rightViewController.h */,
+				6DB158451D79907000D535E7 /* rightViewController.m */,
 				2B001AAC1D6F3EE7002FD720 /* Main.storyboard */,
 				2B001AB21D6F3EE7002FD720 /* Assets.xcassets */,
 				2B001AB41D6F3EE7002FD720 /* LaunchScreen.storyboard */,
@@ -84,6 +98,8 @@
 		2B001AA31D6F3EE7002FD720 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				6DB158471D79951600D535E7 /* left.png */,
+				6DB158491D79951E00D535E7 /* right.png */,
 				2B001AA41D6F3EE7002FD720 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -166,8 +182,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6DB1584A1D79951E00D535E7 /* right.png in Resources */,
 				2B001AB61D6F3EE7002FD720 /* LaunchScreen.storyboard in Resources */,
 				2B001AB31D6F3EE7002FD720 /* Assets.xcassets in Resources */,
+				6DB158481D79951600D535E7 /* left.png in Resources */,
 				2B001AAE1D6F3EE7002FD720 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -228,6 +246,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				2B001AAB1D6F3EE7002FD720 /* ViewController.m in Sources */,
+				6DB158461D79907000D535E7 /* rightViewController.m in Sources */,
+				6DB158431D79906400D535E7 /* leftViewController.m in Sources */,
 				2B001AB11D6F3EE7002FD720 /* InstituteFinder.xcdatamodeld in Sources */,
 				2B001AA81D6F3EE7002FD720 /* AppDelegate.m in Sources */,
 				2B001AA51D6F3EE7002FD720 /* main.m in Sources */,

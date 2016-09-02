@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "MFSideMenu.h"
 
 @interface ViewController ()
 
@@ -14,14 +15,18 @@
 
 @implementation ViewController
 
-#pragma mark - View LifeCycle Methods
 
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    self.view.backgroundColor=[UIColor greenColor];
-    NSLog(@"Hi, this is my first line");
+}
+- (IBAction)left:(id)sender {
+    [self.menuContainerViewController toggleLeftSideMenuCompletion:nil];
+    
+}
+- (IBAction)right:(id)sender {
+    [self.menuContainerViewController toggleRightSideMenuCompletion:nil];
 }
 
 - (void)didReceiveMemoryWarning {
