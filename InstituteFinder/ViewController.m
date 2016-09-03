@@ -19,19 +19,31 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.title=self.str1;
+    [self getCoursesInfo];
     // Do any additional setup after loading the view, typically from a nib.
 }
 - (IBAction)left:(id)sender {
     [self.menuContainerViewController toggleLeftSideMenuCompletion:nil];
     
 }
-- (IBAction)right:(id)sender {
-    [self.menuContainerViewController toggleRightSideMenuCompletion:nil];
-}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(void)getCoursesInfo{
+    NSError *error = nil;
+    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"coursenames"ofType:@"rtf"];
+    NSData *data = [NSData dataWithContentsOfFile:filePath];
+    NSArray *json=[[NSArray alloc]init];
+    json = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
+    NSLog(@"json %@",json);
+    if (error != nil) {
+        NSLog(@"Error: was not able to load messages.");
+        
+    }
 }
 
 @end
