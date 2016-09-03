@@ -17,8 +17,8 @@
 		6DB158431D79906400D535E7 /* leftViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DB158421D79906400D535E7 /* leftViewController.m */; };
 		6DB158481D79951600D535E7 /* left.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DB158471D79951600D535E7 /* left.png */; };
 		6DB1584A1D79951E00D535E7 /* right.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DB158491D79951E00D535E7 /* right.png */; };
-		6DB158971D7A06ED00D535E7 /* institutesnames.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 6DB158961D7A06ED00D535E7 /* institutesnames.rtf */; };
-		6DB158991D7A06F600D535E7 /* coursenames.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 6DB158981D7A06F600D535E7 /* coursenames.rtf */; };
+		6DB158971D7A06ED00D535E7 /* institutesnames.json in Resources */ = {isa = PBXBuildFile; fileRef = 6DB158961D7A06ED00D535E7 /* institutesnames.json */; };
+		6DB158991D7A06F600D535E7 /* coursenames.json in Resources */ = {isa = PBXBuildFile; fileRef = 6DB158981D7A06F600D535E7 /* coursenames.json */; };
 		6DB1589C1D7A108900D535E7 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DB1589B1D7A108900D535E7 /* LoginViewController.m */; };
 		6DB1589F1D7A111F00D535E7 /* ACFloatingTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DB1589E1D7A111F00D535E7 /* ACFloatingTextField.m */; };
 		6DB158A11D7A143C00D535E7 /* image.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DB158A01D7A143C00D535E7 /* image.png */; };
@@ -42,8 +42,8 @@
 		6DB158421D79906400D535E7 /* leftViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = leftViewController.m; sourceTree = "<group>"; };
 		6DB158471D79951600D535E7 /* left.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = left.png; sourceTree = "<group>"; };
 		6DB158491D79951E00D535E7 /* right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = right.png; sourceTree = "<group>"; };
-		6DB158961D7A06ED00D535E7 /* institutesnames.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = institutesnames.rtf; sourceTree = "<group>"; };
-		6DB158981D7A06F600D535E7 /* coursenames.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = coursenames.rtf; sourceTree = "<group>"; };
+		6DB158961D7A06ED00D535E7 /* institutesnames.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = institutesnames.json; sourceTree = "<group>"; };
+		6DB158981D7A06F600D535E7 /* coursenames.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = coursenames.json; sourceTree = "<group>"; };
 		6DB1589A1D7A108900D535E7 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		6DB1589B1D7A108900D535E7 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		6DB1589D1D7A111000D535E7 /* ACFloatingTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ACFloatingTextField.h; sourceTree = "<group>"; };
@@ -98,8 +98,8 @@
 				6DB1589B1D7A108900D535E7 /* LoginViewController.m */,
 				2B001AAC1D6F3EE7002FD720 /* Main.storyboard */,
 				6DB158A01D7A143C00D535E7 /* image.png */,
-				6DB158961D7A06ED00D535E7 /* institutesnames.rtf */,
-				6DB158981D7A06F600D535E7 /* coursenames.rtf */,
+				6DB158961D7A06ED00D535E7 /* institutesnames.json */,
+				6DB158981D7A06F600D535E7 /* coursenames.json */,
 				2B001AB21D6F3EE7002FD720 /* Assets.xcassets */,
 				2B001AB41D6F3EE7002FD720 /* LaunchScreen.storyboard */,
 				2B001AB71D6F3EE7002FD720 /* Info.plist */,
@@ -200,9 +200,9 @@
 				2B001AB61D6F3EE7002FD720 /* LaunchScreen.storyboard in Resources */,
 				2B001AB31D6F3EE7002FD720 /* Assets.xcassets in Resources */,
 				6DB158481D79951600D535E7 /* left.png in Resources */,
-				6DB158991D7A06F600D535E7 /* coursenames.rtf in Resources */,
+				6DB158991D7A06F600D535E7 /* coursenames.json in Resources */,
 				2B001AAE1D6F3EE7002FD720 /* Main.storyboard in Resources */,
-				6DB158971D7A06ED00D535E7 /* institutesnames.rtf in Resources */,
+				6DB158971D7A06ED00D535E7 /* institutesnames.json in Resources */,
 				6DB158A11D7A143C00D535E7 /* image.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

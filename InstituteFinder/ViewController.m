@@ -22,6 +22,8 @@
     self.title=self.str1;
     [self getCoursesInfo];
     // Do any additional setup after loading the view, typically from a nib.
+    
+
 }
 - (IBAction)left:(id)sender {
     [self.menuContainerViewController toggleLeftSideMenuCompletion:nil];
@@ -35,7 +37,7 @@
 
 -(void)getCoursesInfo{
     NSError *error = nil;
-    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"coursenames"ofType:@"rtf"];
+    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"coursenames"ofType:@"json"];
     NSData *data = [NSData dataWithContentsOfFile:filePath];
     NSArray *json=[[NSArray alloc]init];
     json = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];

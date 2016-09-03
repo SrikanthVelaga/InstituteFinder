@@ -18,10 +18,12 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="Acr-Cz-own"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kaj-Fy-a4a" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="514.39999999999998" y="-970.33333333333337"/>
+            <point key="canvasLocation" x="140" y="-896"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -89,13 +91,10 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="A82-zR-h6a"/>
-                    <connections>
-                        <segue destination="BYZ-38-t0r" kind="push" identifier="login" id="cQx-9l-qfb"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ya6-ol-3Yq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1463" y="-855"/>
+            <point key="canvasLocation" x="1158" y="-896"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="H4p-hL-1vQ">
@@ -118,8 +117,9 @@
         <!--Navigation Controller-->
         <scene sceneID="KA8-LV-rLB">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="JmL-Bs-HiV" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="JmL-Bs-HiV" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <nil key="simulatedTopBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="eMc-sp-jNj">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -131,13 +131,10 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ohm-nu-5cX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="931" y="-855"/>
+            <point key="canvasLocation" x="706" y="-896"/>
         </scene>
     </scenes>
     <resources>
         <image name="left.png" width="28" height="18"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="nJ8-M1-ACE"/>
-    </inferredMetricsTieBreakers>
 </document>
