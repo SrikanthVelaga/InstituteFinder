@@ -25,10 +25,10 @@
             </objects>
             <point key="canvasLocation" x="140" y="-896"/>
         </scene>
-        <!--View Controller-->
+        <!--Courses View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="ViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="CoursesViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -36,7 +36,7 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="wmT-iz-7Xi">
                         <barButtonItem key="leftBarButtonItem" image="left.png" id="elC-mm-aZf">
@@ -65,7 +65,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wkg-7k-YkN">
                                 <rect key="frame" x="20" y="50" width="160" height="25"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="OCS-YB-Fx6">
@@ -99,10 +99,10 @@
             </objects>
             <point key="canvasLocation" x="893" y="-140"/>
         </scene>
-        <!--Institute View Controller-->
+        <!--About Us View Controller-->
         <scene sceneID="KhQ-1q-Fn4">
             <objects>
-                <viewController id="20r-is-Cp6" customClass="instituteViewController" sceneMemberID="viewController">
+                <viewController id="20r-is-Cp6" customClass="AboutUsViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="9Kp-T8-8uL"/>
                         <viewControllerLayoutGuide type="bottom" id="mUo-pW-LHC"/>
@@ -110,12 +110,13 @@
                     <view key="view" contentMode="scaleToFill" id="MxB-Lc-64c">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="0.062785506079999998" blue="0.01639994153" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
+                    <navigationItem key="navigationItem" id="6V6-8h-RA6"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mZC-UM-x5f" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1282" y="-140"/>
+            <point key="canvasLocation" x="1884" y="-140"/>
         </scene>
         <!--Detailinstitute View Controller-->
         <scene sceneID="SIb-sr-Qp5">
@@ -133,7 +134,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c5c-Me-lAx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1639" y="-140"/>
+            <point key="canvasLocation" x="2171" y="-140"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="wDZ-Ff-bGh">
@@ -213,6 +214,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ohm-nu-5cX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="706" y="-896"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Vlb-e6-Tst">
+            <objects>
+                <navigationController storyboardIdentifier="AboutUsNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="c5P-EK-EJF" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="hfx-d1-vmM">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="20r-is-Cp6" kind="relationship" relationship="rootViewController" id="AlM-a6-EWc"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="X1i-KF-k6Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1352" y="-140"/>
         </scene>
     </scenes>
     <resources>

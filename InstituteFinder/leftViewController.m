@@ -8,7 +8,7 @@
 
 #import "leftViewController.h"
 #import "MFSideMenu.h"
-#import "ViewController.h"
+#import "CoursesViewController.h"
 
 @interface leftViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (strong, nonatomic) IBOutlet UILabel *usernamelabel;
@@ -64,14 +64,14 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if (sender==self.jsonArr) {
-        ViewController *viewcontroller=[segue destinationViewController];
+        CoursesViewController *viewcontroller=[segue destinationViewController];
         viewcontroller.courseArr=sender;
         
     }else if (sender==self.aboutusstr) {
-        ViewController *viewcontroller=[segue destinationViewController];
+        CoursesViewController *viewcontroller=[segue destinationViewController];
         viewcontroller.aboutusstr=sender;
     }else if (sender==self.contactusdic){
-        ViewController *viewcontroller=[segue destinationViewController];
+        CoursesViewController *viewcontroller=[segue destinationViewController];
         viewcontroller.comingcontactusdic=sender;
     }
     
@@ -99,13 +99,23 @@
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    
+    UINavigationController *navigationcontroller;
     if (indexPath.row==0) {
-        [self getCoursesInfo];
+       navigationcontroller =[self.storyboard instantiateViewControllerWithIdentifier:@"navigationcontroller"];
+        
+        
     }else if (indexPath.row==1) {
-        [self aboutusInfo];
+
+        navigationcontroller =[self.storyboard instantiateViewControllerWithIdentifier:@"AboutUsNavigationController"];
+
+    
     }else {
         [self contactusInfo];
     }
 
-    }
-    @end
+    self.menuContainerViewController.centerViewController = navigationcontroller;
+    [self.menuContainerViewController setMenuState:MFSideMenuStateClosed];
+    
+}
+@end

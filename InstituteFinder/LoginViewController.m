@@ -8,7 +8,7 @@
 
 #import "LoginViewController.h"
 #import "ACFloatingTextField.h"
-#import "ViewController.h"
+#import "CoursesViewController.h"
 #import "MFSideMenu.h"
 
 @interface LoginViewController () <UITextFieldDelegate>

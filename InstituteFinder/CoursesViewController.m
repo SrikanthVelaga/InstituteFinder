@@ -6,16 +6,16 @@
 //  Copyright © 2016 Asquare Mobile Technologies. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "CoursesViewController.h"
 #import "MFSideMenu.h"
 #import "leftViewController.h"
 
-@interface ViewController ()
+@interface CoursesViewController ()
 
 
 @end
 
-@implementation ViewController
+@implementation CoursesViewController
 #pragma mark - View LifeCycle Methods
 
 - (void)viewDidLoad {
