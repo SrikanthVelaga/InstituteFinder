@@ -8,44 +8,36 @@
 
 #import "ViewController.h"
 #import "MFSideMenu.h"
+#import "leftViewController.h"
 
 @interface ViewController ()
+
 
 @end
 
 @implementation ViewController
-
-
+#pragma mark - View LifeCycle Methods
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title=self.str1;
-    [self getCoursesInfo];
+    self.courseArr=[[NSArray alloc]init];
+    NSLog(@"jsonArr coming is %@", self.courseArr);
+    NSLog(@"aboutusinfo coming is %@", self.aboutusstr);
+    NSLog(@"contactusinfo coming is %@", self.comingcontactusdic);
+
     // Do any additional setup after loading the view, typically from a nib.
     
 
 }
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+#pragma mark - IBAction Methods
 - (IBAction)left:(id)sender {
     [self.menuContainerViewController toggleLeftSideMenuCompletion:nil];
     
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
--(void)getCoursesInfo{
-    NSError *error = nil;
-    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"coursenames"ofType:@"json"];
-    NSData *data = [NSData dataWithContentsOfFile:filePath];
-    NSArray *json=[[NSArray alloc]init];
-    json = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
-    NSLog(@"json %@",json);
-    if (error != nil) {
-        NSLog(@"Error: was not able to load messages.");
-        
-    }
-}
 
 @end

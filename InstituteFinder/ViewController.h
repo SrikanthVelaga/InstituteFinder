@@ -9,7 +9,11 @@
 #import <UIKit/UIKit.h>
 
 @interface ViewController : UIViewController
-@property(nonatomic,strong)NSString *str1;
+@property(strong, nonatomic)NSArray *courseArr;
+@property(strong, nonatomic)NSString *aboutusstr;
+@property(strong, nonatomic)NSDictionary *comingcontactusdic;
+
+
 
 
 @end

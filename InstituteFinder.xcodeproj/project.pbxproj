@@ -14,9 +14,10 @@
 		2B001AB11D6F3EE7002FD720 /* InstituteFinder.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2B001AAF1D6F3EE7002FD720 /* InstituteFinder.xcdatamodeld */; };
 		2B001AB31D6F3EE7002FD720 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2B001AB21D6F3EE7002FD720 /* Assets.xcassets */; };
 		2B001AB61D6F3EE7002FD720 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B001AB41D6F3EE7002FD720 /* LaunchScreen.storyboard */; };
+		6D99C1381D7EC7F50012977F /* instituteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D99C1371D7EC7F50012977F /* instituteViewController.m */; };
+		6D99C13B1D7EC8240012977F /* detailinstituteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D99C13A1D7EC8240012977F /* detailinstituteViewController.m */; };
 		6DB158431D79906400D535E7 /* leftViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DB158421D79906400D535E7 /* leftViewController.m */; };
 		6DB158481D79951600D535E7 /* left.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DB158471D79951600D535E7 /* left.png */; };
-		6DB1584A1D79951E00D535E7 /* right.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DB158491D79951E00D535E7 /* right.png */; };
 		6DB158971D7A06ED00D535E7 /* institutesnames.json in Resources */ = {isa = PBXBuildFile; fileRef = 6DB158961D7A06ED00D535E7 /* institutesnames.json */; };
 		6DB158991D7A06F600D535E7 /* coursenames.json in Resources */ = {isa = PBXBuildFile; fileRef = 6DB158981D7A06F600D535E7 /* coursenames.json */; };
 		6DB1589C1D7A108900D535E7 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DB1589B1D7A108900D535E7 /* LoginViewController.m */; };
@@ -38,10 +39,13 @@
 		2B001AB51D6F3EE7002FD720 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2B001AB71D6F3EE7002FD720 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		516C822A92CA063B33E27D8F /* libPods-InstituteFinder.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-InstituteFinder.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6D99C1361D7EC7F50012977F /* instituteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = instituteViewController.h; sourceTree = "<group>"; };
+		6D99C1371D7EC7F50012977F /* instituteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = instituteViewController.m; sourceTree = "<group>"; };
+		6D99C1391D7EC8240012977F /* detailinstituteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = detailinstituteViewController.h; sourceTree = "<group>"; };
+		6D99C13A1D7EC8240012977F /* detailinstituteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = detailinstituteViewController.m; sourceTree = "<group>"; };
 		6DB158411D79906400D535E7 /* leftViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = leftViewController.h; sourceTree = "<group>"; };
 		6DB158421D79906400D535E7 /* leftViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = leftViewController.m; sourceTree = "<group>"; };
 		6DB158471D79951600D535E7 /* left.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = left.png; sourceTree = "<group>"; };
-		6DB158491D79951E00D535E7 /* right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = right.png; sourceTree = "<group>"; };
 		6DB158961D7A06ED00D535E7 /* institutesnames.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = institutesnames.json; sourceTree = "<group>"; };
 		6DB158981D7A06F600D535E7 /* coursenames.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = coursenames.json; sourceTree = "<group>"; };
 		6DB1589A1D7A108900D535E7 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
@@ -86,25 +90,15 @@
 		2B001AA21D6F3EE7002FD720 /* InstituteFinder */ = {
 			isa = PBXGroup;
 			children = (
-				6DB1589D1D7A111000D535E7 /* ACFloatingTextField.h */,
-				6DB1589E1D7A111F00D535E7 /* ACFloatingTextField.m */,
-				2B001AA61D6F3EE7002FD720 /* AppDelegate.h */,
-				2B001AA71D6F3EE7002FD720 /* AppDelegate.m */,
-				2B001AA91D6F3EE7002FD720 /* ViewController.h */,
-				2B001AAA1D6F3EE7002FD720 /* ViewController.m */,
-				6DB158411D79906400D535E7 /* leftViewController.h */,
-				6DB158421D79906400D535E7 /* leftViewController.m */,
-				6DB1589A1D7A108900D535E7 /* LoginViewController.h */,
-				6DB1589B1D7A108900D535E7 /* LoginViewController.m */,
+				6D99C1291D7EAAD80012977F /* AppDelegate */,
+				6D99C12C1D7EAB5E0012977F /* ViewControllers */,
 				2B001AAC1D6F3EE7002FD720 /* Main.storyboard */,
-				6DB158A01D7A143C00D535E7 /* image.png */,
-				6DB158961D7A06ED00D535E7 /* institutesnames.json */,
-				6DB158981D7A06F600D535E7 /* coursenames.json */,
 				2B001AB21D6F3EE7002FD720 /* Assets.xcassets */,
 				2B001AB41D6F3EE7002FD720 /* LaunchScreen.storyboard */,
-				2B001AB71D6F3EE7002FD720 /* Info.plist */,
 				2B001AAF1D6F3EE7002FD720 /* InstituteFinder.xcdatamodeld */,
 				2B001AA31D6F3EE7002FD720 /* Supporting Files */,
+				6D99C12D1D7EAC3C0012977F /* Resourses */,
+				6D99C12E1D7EACC00012977F /* Vendor */,
 			);
 			path = InstituteFinder;
 			sourceTree = "<group>";
@@ -112,11 +106,56 @@
 		2B001AA31D6F3EE7002FD720 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				6DB158471D79951600D535E7 /* left.png */,
-				6DB158491D79951E00D535E7 /* right.png */,
+				2B001AB71D6F3EE7002FD720 /* Info.plist */,
 				2B001AA41D6F3EE7002FD720 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		6D99C1291D7EAAD80012977F /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				2B001AA61D6F3EE7002FD720 /* AppDelegate.h */,
+				2B001AA71D6F3EE7002FD720 /* AppDelegate.m */,
+			);
+			name = AppDelegate;
+			sourceTree = "<group>";
+		};
+		6D99C12C1D7EAB5E0012977F /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				2B001AA91D6F3EE7002FD720 /* ViewController.h */,
+				2B001AAA1D6F3EE7002FD720 /* ViewController.m */,
+				6DB158411D79906400D535E7 /* leftViewController.h */,
+				6DB158421D79906400D535E7 /* leftViewController.m */,
+				6DB1589A1D7A108900D535E7 /* LoginViewController.h */,
+				6DB1589B1D7A108900D535E7 /* LoginViewController.m */,
+				6D99C1361D7EC7F50012977F /* instituteViewController.h */,
+				6D99C1371D7EC7F50012977F /* instituteViewController.m */,
+				6D99C1391D7EC8240012977F /* detailinstituteViewController.h */,
+				6D99C13A1D7EC8240012977F /* detailinstituteViewController.m */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		6D99C12D1D7EAC3C0012977F /* Resourses */ = {
+			isa = PBXGroup;
+			children = (
+				6DB158A01D7A143C00D535E7 /* image.png */,
+				6DB158961D7A06ED00D535E7 /* institutesnames.json */,
+				6DB158981D7A06F600D535E7 /* coursenames.json */,
+				6DB158471D79951600D535E7 /* left.png */,
+			);
+			name = Resourses;
+			sourceTree = "<group>";
+		};
+		6D99C12E1D7EACC00012977F /* Vendor */ = {
+			isa = PBXGroup;
+			children = (
+				6DB1589D1D7A111000D535E7 /* ACFloatingTextField.h */,
+				6DB1589E1D7A111F00D535E7 /* ACFloatingTextField.m */,
+			);
+			name = Vendor;
 			sourceTree = "<group>";
 		};
 		C93E3ACA370B6BEED9F5BB39 /* Pods */ = {
@@ -196,7 +235,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6DB1584A1D79951E00D535E7 /* right.png in Resources */,
 				2B001AB61D6F3EE7002FD720 /* LaunchScreen.storyboard in Resources */,
 				2B001AB31D6F3EE7002FD720 /* Assets.xcassets in Resources */,
 				6DB158481D79951600D535E7 /* left.png in Resources */,
@@ -266,6 +304,8 @@
 				6DB1589F1D7A111F00D535E7 /* ACFloatingTextField.m in Sources */,
 				6DB158431D79906400D535E7 /* leftViewController.m in Sources */,
 				6DB1589C1D7A108900D535E7 /* LoginViewController.m in Sources */,
+				6D99C13B1D7EC8240012977F /* detailinstituteViewController.m in Sources */,
+				6D99C1381D7EC7F50012977F /* instituteViewController.m in Sources */,
 				2B001AB11D6F3EE7002FD720 /* InstituteFinder.xcdatamodeld in Sources */,
 				2B001AA81D6F3EE7002FD720 /* AppDelegate.m in Sources */,
 				2B001AA51D6F3EE7002FD720 /* main.m in Sources */,
