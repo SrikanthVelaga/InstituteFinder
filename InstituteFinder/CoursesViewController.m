@@ -12,7 +12,8 @@
 
 @interface CoursesViewController ()
 
-
+@property (strong, nonatomic) IBOutlet UITableView *TableView;
+@property(nonatomic,strong)NSArray *jsonArr;
 @end
 
 @implementation CoursesViewController
@@ -20,14 +21,23 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.courseArr=[[NSArray alloc]init];
-    NSLog(@"jsonArr coming is %@", self.courseArr);
-    NSLog(@"aboutusinfo coming is %@", self.aboutusstr);
-    NSLog(@"contactusinfo coming is %@", self.comingcontactusdic);
-
+    [self getCoursesInfo];
+    self.TableView.backgroundColor=[UIColor orangeColor];
     // Do any additional setup after loading the view, typically from a nib.
+}
+#pragma mark custom methods
+-(void)getCoursesInfo{
+    NSError *error = nil;
+    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"coursenames"ofType:@"json"];
+    NSData *data = [NSData dataWithContentsOfFile:filePath];
+   
+    self.jsonArr = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
     
-
+    NSLog(@"json %@",self.jsonArr);
+    if (error != nil) {
+        NSLog(@"Error: was not able to load messages.");
+        
+    }
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -38,6 +48,24 @@
     [self.menuContainerViewController toggleLeftSideMenuCompletion:nil];
     
 }
-
+#pragma mark delegate Methods
+#pragma mark tableview delegate Methods
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return self.jsonArr.count;
+}
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    UITableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:@"Cell"];
+    if (cell==nil) {
+        
+        cell=[[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Cell"];
+    }
+    cell.textLabel.text=[self.jsonArr objectAtIndex:indexPath.row];
+    cell.backgroundColor=[UIColor orangeColor];
+    return cell;
+    
+}
 
 @end

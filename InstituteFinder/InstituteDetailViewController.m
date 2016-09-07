@@ -1,18 +1,18 @@
 //
-//  detailinstituteViewController.m
+//  InstituteDetailViewController.m
 //  InstituteFinder
 //
-//  Created by Madu Venkata Dinesh Goud on 06/09/16.
+//  Created by Madu Venkata Dinesh Goud on 07/09/16.
 //  Copyright © 2016 Asquare Mobile Technologies. All rights reserved.
 //
 
-#import "detailinstituteViewController.h"
+#import "InstituteDetailViewController.h"
 
-@interface detailinstituteViewController ()
+@interface InstituteDetailViewController ()
 
 @end
 
-@implementation detailinstituteViewController
+@implementation InstituteDetailViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
