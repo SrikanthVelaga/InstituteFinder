@@ -18,7 +18,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self jsonInstituteArr];
+    [self getInstitutesInfo];
     // Do any additional setup after loading the view.
 }
 #pragma mark custom methods
@@ -26,10 +26,8 @@
     NSError *error = nil;
     NSString *filePath = [[NSBundle mainBundle] pathForResource:@"institutesnames"ofType:@"json"];
     NSData *data = [NSData dataWithContentsOfFile:filePath];
-    
     self.jsonInstituteArr = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
-    
-    NSLog(@"json %@",self.jsonInstituteArr);
+    NSLog(@"json institutes%@",self.jsonInstituteArr);
     if (error != nil) {
         NSLog(@"Error: was not able to load messages.");
         

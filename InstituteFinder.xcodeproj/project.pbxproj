@@ -132,10 +132,10 @@
 			children = (
 				6DB1589A1D7A108900D535E7 /* LoginViewController.h */,
 				6DB1589B1D7A108900D535E7 /* LoginViewController.m */,
-				2B001AA91D6F3EE7002FD720 /* CoursesViewController.h */,
-				2B001AAA1D6F3EE7002FD720 /* CoursesViewController.m */,
 				6DB158411D79906400D535E7 /* leftViewController.h */,
 				6DB158421D79906400D535E7 /* leftViewController.m */,
+				2B001AA91D6F3EE7002FD720 /* CoursesViewController.h */,
+				2B001AAA1D6F3EE7002FD720 /* CoursesViewController.m */,
 				6D83688D1D7FD7FA0078D56D /* AboutUsViewController.h */,
 				6D83688E1D7FD7FA0078D56D /* AboutUsViewController.m */,
 				6D8368901D7FD9C00078D56D /* ContactUsViewController.h */,

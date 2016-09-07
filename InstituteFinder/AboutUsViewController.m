@@ -30,8 +30,8 @@
 
 -(void)aboutusInfo{
     
-    _aboutusstr=@"This app is about giving you a quick glimpse of what's happening in hyderabad";
-    NSLog(@"aboutusinfo%@", _aboutusstr);
+    self.aboutusstr=@"This app is about giving you a quick glimpse of what's happening in hyderabad";
+    NSLog(@"aboutusinfo%@", self.aboutusstr);
     
 }
 

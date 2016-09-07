@@ -65,7 +65,9 @@
     cell.textLabel.text=[self.jsonArr objectAtIndex:indexPath.row];
     cell.backgroundColor=[UIColor orangeColor];
     return cell;
-    
+}
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [self performSegueWithIdentifier:@"institutes" sender:self];
 }
 
 @end

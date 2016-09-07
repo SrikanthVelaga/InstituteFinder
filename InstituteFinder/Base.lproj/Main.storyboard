@@ -28,7 +28,7 @@
         <!--Courses View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="ViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="CoursesViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CourseViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="CoursesViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -73,6 +73,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="TableView" destination="8GA-tl-0vW" id="F0n-Os-eyy"/>
+                        <segue destination="gTs-tO-C5m" kind="push" identifier="institutes" id="lqV-Oo-UK4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -92,10 +93,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="3M2-aN-UxM"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k5h-vg-DUz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="272" y="523"/>
+            <point key="canvasLocation" x="804" y="523"/>
         </scene>
         <!--Institute Detail View Controller-->
         <scene sceneID="QXj-SZ-gwu">
@@ -113,7 +115,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EXr-s9-VmN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="706" y="523"/>
+            <point key="canvasLocation" x="1238" y="523"/>
         </scene>
         <!--Left View Controller-->
         <scene sceneID="NOA-qi-g1V">
