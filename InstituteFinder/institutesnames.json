@@ -1,0 +1,550 @@
+[
+    {
+        "name": "A Square moblie technogies",
+        "address": "S.R. Nagar Police Station Road, Opposite Axis Bank, S.R. Nagar, Hyderabad  - 500038",
+        "courses": [
+            "ios",
+            "android"
+        ],
+        "phone number": "+91 40 33153619",
+        "email": "info@asquareit.com"
+    },
+    {
+        "name": "FuturePoint Technologies",
+        "address": "Flat No. 213A, 2nd floor, Nilgiri Block, Aditya Enclave, Ameerpet, Hyderabad, Telangana 500038",
+        "courses": [
+            "ios",
+            "android",
+            "oracle",
+            "sap"
+        ],
+        "phone number": "040 6555 1274"
+    },
+    {
+        "name": "ProcessWeaver IT Academy ",
+        "address": "31/A , Chitti Classics, Balkampet Main Road, Adjacent to SR Nagar Police Station Signal, S.R. Nagar, Hyderabad, Telangana 500038",
+        "courses": [
+            "ios",
+            "android",
+            "oracle",
+            "sap"
+        ],
+        "phone number": " +91 9000556789",
+        "email": "info@processweaveracademy.com"
+    },
+    {
+        "name": "RapoTeam",
+        "address": "#201, H.No: 7-1-621/13, Special MIG, SR Nagar Road Number 1, Opp. Sindhu Travels, Sanjeev Reddy Nagar, Hyderabad, Telangana 500038",
+        "courses": [
+            "ios",
+            "android",
+            "oracle",
+            "sap",
+            "php",
+            ".net"
+        ],
+        "phone number": "081219 91818"
+    },
+    {
+        "name": "iPAP Academy",
+        "address": " H.No. 8-3-191/147/11/1, B-7, 5th Floor, Mallareddy Heights, Madhura Nagar, Ameerpet, Mothi Nagar, Telangana 500038",
+        "courses": [
+            "ios",
+            "android"
+        ],
+        "phone number": "098491 22441",
+        "email": "ipapacademy@gmail.com"
+    },
+{
+        "name": "Front Bench IT",
+        "address": "Manjeera Plaza, Satyam Theatre Rd, Srinivasa Nagar, Ameerpet, Hyderabad, Telangana 500038",
+        "courses": [
+            "ios",
+            "android",
+            "oracle",
+            "sap",
+            "c",
+            "c++",
+            "python"
+        ],
+        "phone number": "040 6569 7989",
+        "email": "info@frontbenchit.com"
+    },
+    {
+        "name": "BRN Infotech",
+        "address": "3rd Floor, Amma Nilayam, Jai Hind Enclave, Madhapur, Hyderabad, Telangana 500081",
+        "courses": [
+            "ios",
+            "android"
+        ],
+        "phone number": "040 6444 4492",
+        "email": " info@brninfotech.com"
+    },
+    {
+        "name": "Naresh i Technologies",
+        "address": "Satyam Theatre Rd, Ameerpet, Hyderabad, Andhra Pradesh 500016",
+        "courses": [
+            "ios",
+            "android",
+            "oracle",
+            "sap",
+            "networking",
+            "php",
+            ".net",
+            "c",
+            "c++",
+            "java",
+            "python"
+        ],
+        "phone number": "040 2374 6666",
+        "email": "info@nareshit.com"
+    },
+    {
+        "name": "Sathya Technologies",
+        "address": " Door No. 7-1-455, 2nd Floor, Sri Sai Arcade, Beside Aditya Trade Centre, Ameerpet, Hyderabad, Telangana 500036",
+        "courses": [
+            "ios",
+            "android",
+            "oracle",
+            "sap",
+            "networking",
+            "php",
+            ".net",
+            "c",
+            "c++",
+            "java",
+            "python"
+        ],
+        "phone number": "040 6553 8958",
+        "email": "info@sathyatech.com"
+    },
+    {
+        "name": "Peers Technologies Pvt. Ltd.",
+        "address": " #207, II Floor,HUDA Maithrivanam,Sanjeevareddy Nagar Road, Ameerpet, Hyderabad, Telangana 500038",
+        "courses": [
+            "ios",
+            "android",
+            "networking",
+            "php",
+            ".net",
+            "c",
+            "c++",
+            "java"
+        ],
+        "phone number": "040 4031 0000",
+        "email": "enq@peerstech.com"
+    },
+{
+        "name": "Revanth Technologies",
+        "address": " B1,3rd Floor, Eureka Court, Near Image Hospital, Ameerpet, Hyderabad, Telangana 500073",
+        "courses": [
+            "android",
+            "oracle",
+            "sap",
+            "python",
+            "php",
+            ".net",
+            "networking"
+        ],
+        "phone number": "092909 71883",
+        "email": "revanthonlinetraining@gmail.com"
+    },
+    {
+        "name": "Srihitha Technologies",
+        "address": "No. B7, 3rd Floor, Eurekha Court Building, Near Image Hospital, Hyderabad, Telangana 500073",
+        "courses": [
+            "android",
+            "sap",
+            ".net",
+            "python",
+            "oracle"
+        ],
+        "phone number": "040 6461 9566",
+        "email": "srihithaclassroomtraining@gmail.com"
+    },
+    {
+        "name": "Algorithm Class",
+        "address": "105, Kolan Rajireddy complex, Opp. Bhaskar model school, beside vijetha,, Nizampet X road, Hyderabad, Telangana 500072",
+        "courses": [
+            "android",
+            "oracle",
+            "sap",
+            "c",
+            "c++",
+            "java",
+            "python"
+        ],
+        "phone number": "099639 30865",
+        "email": "contact@algorithmtraining.com"
+    },
+    {
+        "name": "Python Training",
+        "address": "Flat No 406, Sai Signature, Huda Mayuri Nagar, Miyapur, Hyderabad, Telangana 500049",
+        "courses": [
+            "python"
+        ],
+        "phone number": "088855 15041",
+        "email": " support@indiatrainings.in"
+    },
+    {
+        "name": "Kelly Technologies",
+        "address": "Flat No. 212, 2nd Floor, Annapurna Block, Aditya Enclave, Ameerpet, Hyderabad, Telangana 500016",
+        "courses": [
+            "android",
+            "networking",
+            "php",
+            ".net",
+            "c",
+            "c++",
+            "java",
+            "oracle"
+        ],
+        "phone number": "099857 06789",
+        "email": "info@kellytechno.com"
+    },
+{
+        "name": "Boby Technologies",
+        "address": "Annapoorna Block, 515,, Satyam Theatre Rd, Aditya Enclave, Ameerpet, Hyderabad, Telangana 500082",
+        "courses": [
+            "sap",
+            "python",
+            "php"
+        ],
+        "phone number": "081215 07734"
+    },
+    {
+        "name": "INetSolv Technologies",
+        "address": "Second Floor, Swathi Manors, Near AdityaParkInn Hotel, Mythrivanam Road, Ameerpet, Hyderabad, Telangana 500082",
+        "courses": [
+            "android",
+            "sap",
+            ".net",
+            "python",
+            "oracle",
+            "php",
+            "java"
+        ],
+        "phone number": "040 2373 0483",
+        "email": "admin@inetsolv.info"
+    },
+    {
+        "name": "Santosh Technologies",
+        "address": " Ameerpet, Hyderabad, Telangana 500038",
+        "courses": [
+            "sap",
+            "java"
+        ],
+        "phone number": "040 6451 5858",
+        "email": "info@santoshtechnologies.com"
+    },
+    {
+        "name": "LiveTech",
+        "address": "104, Annapurna Block, Aditya Enclave, Satyam Theatre Road, Ameerpet, Hyderabad, Telangana 500038",
+        "courses": [
+            "python",
+            "sap",
+            "php",
+            "networking"
+        ],
+        "phone number": "090000 08814",
+        "email": " info@livetech.co.in"
+    },
+    {
+        "name": "Durga Software Solutions",
+        "address": "Plot No : 202, IInd Floor , HUDA Maitrivanam, Ameerpet, Hyderabad, Telangana 500038",
+        "courses": [
+            "php",
+            ".net",
+            "c",
+            "c++",
+            "java",
+            "oracle"
+        ],
+        "phone number": "092462 12143"
+    },
+{
+        "name": "Raaju technologies",
+        "address": "Ameerpet, Hyderabad, Telangana 500081",
+        "courses": [
+            "sap",
+            "java",
+            "oracle"
+        ],
+        "phone number": "094901 33853",
+        "email": "rajuonlinetraining@gmail.com"
+    },
+    {
+        "name": "OAK TREE TECHNOLOGIES",
+        "address": "Shop No.15, MIG - 1 Hospital, Rd Number 1, KPHB Phase I, Kukatpally Housing Board Colony, Kukatpally, Hyderabad, Telangana 500072",
+        "courses": [
+            "android",
+            "sap",
+            ".net",
+            "ios",
+            "oracle",
+            "java"
+        ],
+        "phone number": "040 4015 6697",
+        "email": "oaktreetech@gmail.com"
+    },
+    {
+        "name": "Computech Info Solutions",
+        "address": "#401,4th Floor,Siri Plaza, Opp:RS Brothers, Bhagya Nagar Colony, KPHB,Kukatpally, Hyderabad,Telangana 500072",
+        "courses": [
+            "sap",
+            "java",
+            "oracle",
+            "c",
+            "c++",
+            "php",
+            "android",
+            ".net"
+        ],
+        "phone number": "090000 11489",
+        "email": "computechis@yahoo.com"
+    },
+    {
+        "name": "Incomp Software Technologies",
+        "address": "446, First Floor, S.Chandra Reddy Tower, Madhapur, Ayyappa Society,, Land mark YSR Statue, Madhapur, Hyderabad, Telangana 500081",
+        "courses": [
+            "python",
+            "sap",
+            "php",
+            "networking",
+            "android",
+            ".net"
+        ],
+        "phonenumber": "040 6458 8400"
+    },
+    {
+        "name": "Focus Training Services",
+        "address": " #301, 3rd floor, Nagasuri Plazza, Satyam Theatre Rd, Hyderabad, Telangana 500082",
+        "courses": [
+            ".net",
+            "java",
+            "oracle",
+            "android",
+            "php"
+        ],
+        "phonenumber": "040 6610 0999"
+    },
+{
+        "name": "CodeTantra Tech Solutions Pvt Ltd",
+        "address": "Shop No: 2, 12-6-2/273/2, VC Plaza Opp to BJP Office,, Kukatpally, Hyderabad, Telangana 500072",
+        "courses": [
+            "sap",
+            "java",
+            "oracle"
+        ],
+        "phone number": "098496 00002"
+    },
+    {
+        "name": "Lara Technologies",
+        "address": " Flat No.301, Revathi Apartments, Opp.Annapurna Block, Srinivasa Nagar, Ameerpet, Hyderabad, Telangana 500038",
+        "courses": [
+            "sap",
+            "java",
+            ".net"
+        ],
+        "phone number": "040 4005 5116",
+        "email": "contact-us@laratechnology.com"
+    },
+    {
+        "name": "NIIT Cloud Campus",
+        "address": "4th Floor, C.N. Reddy Complex, SBI Lane, Indira Nagar, Dilsukh Nagar, Beside Bajaj Electronics, Hyderabad, Telangana 500035",
+        "courses": [
+            "java",
+            "oracle",
+            "c",
+            "c++",
+            "android"
+        ],
+        "phone number": "040 6646 9292",
+        "email": "careercourses@niit.com"
+    },
+    {
+        "name": "NeoApp Technologies",
+        "address": "8-3-214/A/1, 1st Floor, Opp. to South Indian Bank, Ameerpet - SR Nagar Road, Srinivasa Nagar Colony West, Hyderabad, Telangana 500038",
+        "courses": [
+            "python",
+            "sap",
+            "php",
+            "networking",
+            "android",
+            ".net",
+            "java"
+        ],
+        "phonenumber": "040 6455 2299"
+    },
+    {
+        "name": "Deccansoft Software Services",
+        "address": " 402, Saptagiri Towers, Sardar Patel Rd, Mayur Marg, Begumpet, Hyderabad, Telangana 500016",
+        "courses": [
+            ".net",
+            "java",
+            "oracle",
+            "android",
+            "c",
+            "c++"
+        ],
+        "phonenumber": "080083 27000",
+        "email": "enquiry@deccansoft.com"
+    },
+{
+        "name": "Zoom Technologies (India) Pvt. Ltd.",
+        "address": " # 203, 2nd Floor, HUDA Maitrivanam, Ameerpet, Hyderabad, Telangana 500016",
+        "courses": [
+            "networking",
+            "java",
+            ".net",
+            "android"
+        ],
+        "phone number": "040 2374 5252",
+        "email": " priya@zoomgroup.com"
+    },
+    {
+        "name": "Golars Networks",
+        "address": " #402,4th floor,Maitrivanam Huda Complex, Ameerpet, Hyderabad, Telangana 500038",
+        "courses": [
+            "networking"
+        ],
+        "phone number": "040 4020 0200",
+        "email": "contact@golarsnetworks.com"
+    },
+    {
+        "name": "Netmetric Solutions",
+        "address": "Srinivasa Nagar, Ameerpet, Hyderabad, Telangana 500016",
+        "courses": [
+            "android",
+            "networking"
+        ],
+        "phone number": "040 6457 7864",
+        "email": " info@netmetric-solutions.com"
+    },
+    {
+        "name": "Dreams Media Solutions",
+        "address": " #408 Nilgiri Block Aditya Enclave,Near Mythrivanam, Ameerpet, Hyderabad, Telangana 500038",
+        "courses": [
+            "sap",
+            "php",
+            "networking",
+            ".net",
+            "java"
+        ],
+        "phonenumber": "088855 94359",
+        "email": "dms.trainer@gmail.com"
+    },
+    {
+        "name": "PHP CMS LAMP TRAINING INSTITUTE",
+        "address": " Ameerpet, Prime Hospital Lane,, #501, Balajee Tower, Block B, Hyderabad, Telangana 500038",
+        "courses": [
+            "php"
+        ],
+        "phonenumber": "093470 45052",
+        "email": "PURUSINGH2004@GMAIL.COM"
+    },
+{
+        "name": "Lamp Institute",
+        "address": "#401, Fourth Floor, Mahendra Residency, Beside Tipsy Topsy Bakery, Third Building from Aditya, Hyderabad, Telangana 500016",
+        "courses": [
+            "php",
+            "java"
+        ],
+        "phone number": "040 4003 5939",
+        "email": " info@lampinstitute.com"
+    },
+    {
+        "name": "Ikya Global Edu",
+        "address": "Suite 503, 5th Floor, HMDA Mythrivanam, Ameerpet, Hyderabad, Telangana 500038",
+        "courses": [
+            ".net"
+        ],
+        "phone number": "092480 16659",
+        "email": "info@ikyaglobaledu.net "
+    },
+    {
+        "name": "Primarkinfotech",
+        "address": "Aditya Enclave, Satyam Theatre Rd, Ameerpet, Hyderabad, Telangana 500016",
+        "courses": [
+            "android",
+            "ios",
+            "sap",
+            "oracle"
+        ],
+        "phone number": "099635 23121",
+        "email": "consulting@primarkinfotech.com"
+    },
+    {
+        "name": "TechnoPad SAP Training Center",
+        "address": "Flat No 202, 2nd Floor, Sri Swathi Anukar Complex, Beside Aditya Trade Centre, Opposite Lane Of Satyam Theater, Above ICICI ATM, Ameerpet, Hyderabad, Telangana 500016",
+        "courses": [
+            "sap"
+        ],
+        "phonenumber": "095813 36333",
+        "email": " sap.technopad@gmail.com"
+    },
+    {
+        "name": "Pragna Technologies",
+        "address": "Flat No.407. Nilagiri Block, Aditya Enclave, Ameerpet, Hyderabad, Telangana 500038",
+        "courses": [
+            "php",
+            "sap",
+            "android",
+            "java",
+            "oracle",
+            ".net"
+        ],
+        "phonenumber": "040 4003 6678",
+        "email": " info@pragnatechnologies.com"
+    },
+{
+        "name": "Ripples Info",
+        "address": "Door No. 7-1-619/A/33, Gayathri Nagar, Behind Huda Maitrivanam, Ameerpet, Hyderabad, Telangana 500038",
+        "courses": [
+            "sap"
+        ],
+        "phone number": "087901 36839",
+        "email": "admin@ripplesinfo.com"
+    },
+    {
+        "name": "Propel Technologies",
+        "address": "Plot No. 47, 2nd Floor, Gayathri Nagar, Mythrivanam Back Side, S A P Street, Ameerpet, Hyderabad, Telangana 500016",
+        "courses": [
+            "sap"
+        ],
+        "phone number": "040 6463 8789",
+        "email": "info@propelsd.in"
+    },
+    {
+        "name": "BESTWAY Technologies",
+        "address": "2rd Floor, Behind HUDA Maitrivanam, Gayatri Nagar Ameerpet,, Hyderabad, Andhra Pradesh 500038",
+        "courses": [
+            "sap",
+            "oracle"
+        ],
+        "phone number": "040 6410 4060",
+        "email": "reachus@bestwaytechnologies.in"
+    },
+    {
+        "name": "Sap BO",
+        "address": "Plot No.28, Behind HUDA Maitrivanam, Gayatri Nagar, Opp: Aditya Enclave, Ameerpet, Hyderabad, Telangana 500038",
+        "courses": [
+            "sap",
+            "oracle",
+            "java"
+        ],
+        "phonenumber": "098491 53671",
+        "email": "info@sryitsolutions.com"
+    },
+    {
+        "name": "Makawee Soft",
+        "address": "Miyapur, Hyderabad, Telangana 500049",
+        "courses": [
+            ".net",
+            "sap",
+            "java",
+            "oracle"
+        ],
+        "phonenumber": "040 4018 2330"
+    }
+]}

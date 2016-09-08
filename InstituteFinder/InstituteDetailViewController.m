@@ -1,18 +1,18 @@
 //
-//  rightViewController.m
+//  InstituteDetailViewController.m
 //  InstituteFinder
 //
-//  Created by Madu Venkata Dinesh Goud on 02/09/16.
+//  Created by Madu Venkata Dinesh Goud on 07/09/16.
 //  Copyright © 2016 Asquare Mobile Technologies. All rights reserved.
 //
 
-#import "rightViewController.h"
+#import "InstituteDetailViewController.h"
 
-@interface rightViewController ()
+@interface InstituteDetailViewController ()
 
 @end
 
-@implementation rightViewController
+@implementation InstituteDetailViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

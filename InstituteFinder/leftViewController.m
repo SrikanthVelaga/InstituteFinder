@@ -7,15 +7,21 @@
 //
 
 #import "leftViewController.h"
+#import "MFSideMenu.h"
+#import "CoursesViewController.h"
 
-@interface leftViewController ()
-
+@interface leftViewController ()<UITableViewDelegate,UITableViewDataSource>
+@property (strong, nonatomic) IBOutlet UILabel *usernamelabel;
+@property (strong, nonatomic) IBOutlet UITableView *Tableview;
+@property(strong, nonatomic) NSMutableArray *mutArr;
 @end
 
 @implementation leftViewController
-
+#pragma mark - View LifeCycle Methods
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.mutArr=[[NSMutableArray alloc]initWithObjects:@"Course", @"About Us", @"Contact Us", nil];
     // Do any additional setup after loading the view.
 }
 
@@ -24,14 +30,45 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+
+#pragma mark delegate Methods
+#pragma mark tableview delegate Methods
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return self.mutArr.count;
 }
-*/
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *myid=@"cell";
+    UITableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:myid];
+    if (cell==nil) {
+        
+        cell=[[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:myid];
+    }
+    cell.textLabel.text=[self.mutArr objectAtIndex:indexPath.row];
+    return cell;
+    
+}
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    UINavigationController *navigationcontroller;
+    if (indexPath.row==0) {
+       navigationcontroller =[self.storyboard instantiateViewControllerWithIdentifier:@"navigationcontroller"];
+        
+        
+    }else if (indexPath.row==1) {
 
+        navigationcontroller =[self.storyboard instantiateViewControllerWithIdentifier:@"AboutUsNavigationController"];
+
+    
+    }else {
+       navigationcontroller =[self.storyboard instantiateViewControllerWithIdentifier:@"ContactUsNavigationController"];
+    }
+
+    self.menuContainerViewController.centerViewController = navigationcontroller;
+    [self.menuContainerViewController setMenuState:MFSideMenuStateClosed];
+    
+}
 @end

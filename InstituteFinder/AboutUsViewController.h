@@ -1,15 +1,13 @@
 //
-//  ViewController.h
+//  AboutUsViewController.h
 //  InstituteFinder
 //
-//  Created by Asquare Mobile Technologies on 8/25/16.
+//  Created by Madu Venkata Dinesh Goud on 07/09/16.
 //  Copyright © 2016 Asquare Mobile Technologies. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface AboutUsViewController : UIViewController
 
 @end
-
