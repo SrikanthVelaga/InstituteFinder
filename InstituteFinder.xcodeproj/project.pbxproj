@@ -14,6 +14,7 @@
 		2B001AB11D6F3EE7002FD720 /* InstituteFinder.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2B001AAF1D6F3EE7002FD720 /* InstituteFinder.xcdatamodeld */; };
 		2B001AB31D6F3EE7002FD720 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2B001AB21D6F3EE7002FD720 /* Assets.xcassets */; };
 		2B001AB61D6F3EE7002FD720 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B001AB41D6F3EE7002FD720 /* LaunchScreen.storyboard */; };
+		2B8A50DF1D81B0FE00E4445F /* Institute.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B8A50DE1D81B0FE00E4445F /* Institute.m */; };
 		6D83688F1D7FD7FA0078D56D /* AboutUsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D83688E1D7FD7FA0078D56D /* AboutUsViewController.m */; };
 		6D8368921D7FD9C00078D56D /* ContactUsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D8368911D7FD9C00078D56D /* ContactUsViewController.m */; };
 		6D8368951D800C970078D56D /* InstituteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D8368941D800C970078D56D /* InstituteViewController.m */; };
@@ -40,6 +41,8 @@
 		2B001AB21D6F3EE7002FD720 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2B001AB51D6F3EE7002FD720 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2B001AB71D6F3EE7002FD720 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2B8A50DD1D81B0FE00E4445F /* Institute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Institute.h; sourceTree = "<group>"; };
+		2B8A50DE1D81B0FE00E4445F /* Institute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Institute.m; sourceTree = "<group>"; };
 		516C822A92CA063B33E27D8F /* libPods-InstituteFinder.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-InstituteFinder.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D83688D1D7FD7FA0078D56D /* AboutUsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutUsViewController.h; sourceTree = "<group>"; };
 		6D83688E1D7FD7FA0078D56D /* AboutUsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutUsViewController.m; sourceTree = "<group>"; };
@@ -98,6 +101,7 @@
 			children = (
 				6D99C1291D7EAAD80012977F /* AppDelegate */,
 				6D99C12C1D7EAB5E0012977F /* ViewControllers */,
+				2B8A50DC1D81B0CA00E4445F /* Models */,
 				2B001AAC1D6F3EE7002FD720 /* Main.storyboard */,
 				2B001AB21D6F3EE7002FD720 /* Assets.xcassets */,
 				2B001AB41D6F3EE7002FD720 /* LaunchScreen.storyboard */,
@@ -116,6 +120,15 @@
 				2B001AA41D6F3EE7002FD720 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		2B8A50DC1D81B0CA00E4445F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				2B8A50DD1D81B0FE00E4445F /* Institute.h */,
+				2B8A50DE1D81B0FE00E4445F /* Institute.m */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 		6D99C1291D7EAAD80012977F /* AppDelegate */ = {
@@ -317,6 +330,7 @@
 				6D8368921D7FD9C00078D56D /* ContactUsViewController.m in Sources */,
 				6D8368981D800CBC0078D56D /* InstituteDetailViewController.m in Sources */,
 				6DB1589C1D7A108900D535E7 /* LoginViewController.m in Sources */,
+				2B8A50DF1D81B0FE00E4445F /* Institute.m in Sources */,
 				2B001AB11D6F3EE7002FD720 /* InstituteFinder.xcdatamodeld in Sources */,
 				2B001AA81D6F3EE7002FD720 /* AppDelegate.m in Sources */,
 				2B001AA51D6F3EE7002FD720 /* main.m in Sources */,
