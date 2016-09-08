@@ -9,9 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface CoursesViewController : UIViewController
-@property(strong, nonatomic)NSArray *courseArr;
-@property(strong, nonatomic)NSString *aboutusstr;
-@property(strong, nonatomic)NSDictionary *comingcontactusdic;
 
 
 

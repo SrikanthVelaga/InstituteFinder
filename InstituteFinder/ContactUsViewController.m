@@ -1,37 +1,43 @@
-//  AboutUsViewController.m
+//
+//  ContactUsViewController.m
 //  InstituteFinder
 //
 //  Created by Madu Venkata Dinesh Goud on 07/09/16.
 //  Copyright © 2016 Asquare Mobile Technologies. All rights reserved.
 //
 
-#import "AboutUsViewController.h"
+#import "ContactUsViewController.h"
 #import "MFSideMenu.h"
 
-@interface AboutUsViewController ()
-@property (strong, nonatomic) IBOutlet UILabel *AboutUsLabel;
-@property(nonatomic,strong)NSString *aboutusstr;
+@interface ContactUsViewController ()
+@property(strong,nonatomic)NSDictionary *contactusdic;
+@property (strong, nonatomic) IBOutlet UITextField *nametextfield;
+@property (strong, nonatomic) IBOutlet UITextField *phonenotextfield;
+@property (strong, nonatomic) IBOutlet UITextField *emailtextfield;
+
 @end
 
-@implementation AboutUsViewController
+@implementation ContactUsViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self aboutusInfo];
-    self.AboutUsLabel.text=self.aboutusstr;
+    [self contactusInfo];
+    self.nametextfield.text=[self.contactusdic valueForKey:@"name"];
+    self.phonenotextfield.text=[self.contactusdic valueForKey:@"phone number"];
+    self.emailtextfield.text=[self.contactusdic valueForKey:@"email"];
     // Do any additional setup after loading the view.
 }
+#pragma mark custom methods
+-(void)contactusInfo{
+    self.contactusdic=[NSDictionary dictionaryWithObjectsAndKeys:@"dinesh",@"name",@"9705873797",@"phone number",@"mvfeast1@gmail.com", @"email", nil];
+    NSLog(@"contactusinfo %@", self.contactusdic);
+    
+}
+
+
 #pragma mark - IBAction Methods
 - (IBAction)left:(UIBarButtonItem *)sender {
     [self.menuContainerViewController toggleLeftSideMenuCompletion:nil];
-}
-#pragma mark custom methods
-
--(void)aboutusInfo{
-    
-    self.aboutusstr=@"This app is about giving you a quick glimpse of what's happening in hyderabad";
-    NSLog(@"aboutusinfo%@", self.aboutusstr);
-    
 }
 
 - (void)didReceiveMemoryWarning {

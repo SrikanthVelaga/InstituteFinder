@@ -1,4 +1,5 @@
-//  AboutUsViewController.h
+//
+//  InstituteDetailViewController.h
 //  InstituteFinder
 //
 //  Created by Madu Venkata Dinesh Goud on 07/09/16.
@@ -7,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AboutUsViewController : UIViewController
+@interface InstituteDetailViewController : UIViewController
 
 @end

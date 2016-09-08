@@ -1,38 +1,39 @@
-//  AboutUsViewController.m
+//
+//  InstituteViewController.m
 //  InstituteFinder
 //
 //  Created by Madu Venkata Dinesh Goud on 07/09/16.
 //  Copyright © 2016 Asquare Mobile Technologies. All rights reserved.
 //
 
-#import "AboutUsViewController.h"
-#import "MFSideMenu.h"
+#import "InstituteViewController.h"
 
-@interface AboutUsViewController ()
-@property (strong, nonatomic) IBOutlet UILabel *AboutUsLabel;
-@property(nonatomic,strong)NSString *aboutusstr;
+@interface InstituteViewController ()
+@property(nonatomic,strong)NSArray *jsonInstituteArr;
+
+
 @end
 
-@implementation AboutUsViewController
+@implementation InstituteViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self aboutusInfo];
-    self.AboutUsLabel.text=self.aboutusstr;
+    [self getInstitutesInfo];
     // Do any additional setup after loading the view.
 }
-#pragma mark - IBAction Methods
-- (IBAction)left:(UIBarButtonItem *)sender {
-    [self.menuContainerViewController toggleLeftSideMenuCompletion:nil];
-}
 #pragma mark custom methods
-
--(void)aboutusInfo{
-    
-    self.aboutusstr=@"This app is about giving you a quick glimpse of what's happening in hyderabad";
-    NSLog(@"aboutusinfo%@", self.aboutusstr);
-    
+-(void)getInstitutesInfo{
+    NSError *error = nil;
+    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"institutesnames"ofType:@"json"];
+    NSData *data = [NSData dataWithContentsOfFile:filePath];
+    self.jsonInstituteArr = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
+    NSLog(@"json institutes%@",self.jsonInstituteArr);
+    if (error != nil) {
+        NSLog(@"Error: was not able to load messages.");
+        
+    }
 }
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
