@@ -66,6 +66,7 @@
                         <color key="backgroundColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="8GA-tl-0vW" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="88F-Na-X8S"/>
+                            <constraint firstItem="8GA-tl-0vW" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="30" id="I5R-J9-aDH"/>
                             <constraint firstItem="8GA-tl-0vW" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="Yrt-hq-5Cf"/>
                             <constraint firstItem="8GA-tl-0vW" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="bxo-RS-Wjr"/>
                             <constraint firstItem="8GA-tl-0vW" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="50" id="jkv-8a-3HZ"/>

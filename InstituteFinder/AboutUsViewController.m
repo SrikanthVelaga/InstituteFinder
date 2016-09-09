@@ -1,4 +1,3 @@
-//
 //  AboutUsViewController.m
 //  InstituteFinder
 //

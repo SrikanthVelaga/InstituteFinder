@@ -21,9 +21,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self getInstitutesInfo];
+    _SingletonObj=[Singleton SharedClass];
     // Do any additional setup after loading the view.
 }
-#pragma mark custom methods
+
+#pragma mark - Private API
+
 -(void)getInstitutesInfo{
     NSError *error = nil;
     NSString *filePath = [[NSBundle mainBundle] pathForResource:@"institutesnames"ofType:@"json"];
