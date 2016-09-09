@@ -11,15 +11,11 @@
 #import "leftViewController.h"
 
 @interface CoursesViewController ()
-{
-    BOOL isFiltered;
-}
-@property (strong, nonatomic) IBOutlet UISearchBar *SearchBar;
+@property (weak, nonatomic) IBOutlet UISearchBar *SearchBar;
 
 @property (strong, nonatomic) IBOutlet UITableView *TableView;
 @property(nonatomic,strong)NSMutableArray *jsonArr;
-@property(nonatomic,strong)NSMutableArray *FilteredData;
-
+@property(nonatomic,strong)NSMutableArray *filteredArr;
 @end
 
 @implementation CoursesViewController
@@ -55,40 +51,8 @@
     
 }
 #pragma mark delegate Methods
-#pragma mark tableview delegate Methods
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    
-    if(isFiltered){
-        return[_FilteredData count];
-    }
-    else
-       return[self.jsonArr count];
-    
-    
-    
-}
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    
-    UITableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:@"Cell"];
-    if (cell==nil) {
-        
-        cell=[[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Cell"];
-    }
-    if(isFiltered)
-    {
-        cell.textLabel.text=[self.FilteredData objectAtIndex:indexPath.row];
-    }
-    cell.textLabel.text=[self.jsonArr objectAtIndex:indexPath.row];
-    cell.backgroundColor=[UIColor orangeColor];
-    return cell;
-}
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    [self performSegueWithIdentifier:@"institutes" sender:self];
-}
 #pragma mark SearchBar delegate Methods
--(void)searchBarSearchButtonClicked:(UISearchBar *)SearchBar
+-(void)searchBarDidSelect:(UISearchBar*)SearchBar
 {
     [self.TableView resignFirstResponder];
 }
@@ -100,16 +64,15 @@
     }
     else
     {
-        isFiltered = YES;
-        _FilteredData = [[NSMutableArray alloc] init];
+        isFiltered =YES;
+        _filteredArr = [[NSMutableArray alloc] init];
         
         for (NSString* str in _jsonArr)
         {
-            NSRange Range = [str rangeOfString:text options:NSCaseInsensitiveSearch];
+            NSRange nameRange = [str rangeOfString:text options:NSCaseInsensitiveSearch];
             
-                       if(Range.location != NSNotFound)
-            {
-                [_FilteredData addObject:str];
+            if(nameRange.location != NSNotFound)             {
+                [_filteredArr addObject:str];
             }
         }
     }
@@ -117,4 +80,32 @@
     [self.TableView reloadData];
 }
 
+#pragma mark tableview delegate Methods
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    if (isFiltered) {
+        return self.filteredArr.count;
+    }
+    else
+    return self.jsonArr.count;
+}
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    UITableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:@"Cell"];
+    if (cell==nil) {
+        
+        cell=[[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Cell"];
+    }
+    if (isFiltered) {
+        cell.textLabel.text=[self.filteredArr objectAtIndex:indexPath.row];
+        cell.backgroundColor=[UIColor orangeColor];
+    }
+    cell.textLabel.text=[self.jsonArr objectAtIndex:indexPath.row];
+    cell.backgroundColor=[UIColor orangeColor];
+    return cell;
+}
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [self performSegueWithIdentifier:@"institutes" sender:self];
+}
 @end

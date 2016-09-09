@@ -9,7 +9,10 @@
 #import <UIKit/UIKit.h>
 
 @interface CoursesViewController : UIViewController
-
+{
+    BOOL isFiltered;
+    
+}
 
 
 
