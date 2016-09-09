@@ -38,7 +38,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="8GA-tl-0vW">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <rect key="frame" x="0.0" y="94" width="320" height="380"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="0IS-gg-Uyi">
@@ -55,13 +55,20 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="xXm-Lj-Vvz"/>
                                 </connections>
                             </tableView>
+                            <searchBar contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="e52-TT-8uA">
+                                <rect key="frame" x="0.0" y="72" width="320" height="44"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="9qC-Sy-3cb"/>
+                                </connections>
+                            </searchBar>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="8GA-tl-0vW" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="88F-Na-X8S"/>
+                            <constraint firstItem="8GA-tl-0vW" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="30" id="I5R-J9-aDH"/>
                             <constraint firstItem="8GA-tl-0vW" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="Yrt-hq-5Cf"/>
                             <constraint firstItem="8GA-tl-0vW" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="bxo-RS-Wjr"/>
-                            <constraint firstItem="8GA-tl-0vW" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="kUB-63-LrG"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="wmT-iz-7Xi">
@@ -72,6 +79,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="SearchBar" destination="e52-TT-8uA" id="BoD-0f-Hih"/>
                         <outlet property="TableView" destination="8GA-tl-0vW" id="F0n-Os-eyy"/>
                         <segue destination="gTs-tO-C5m" kind="push" identifier="institutes" id="lqV-Oo-UK4"/>
                     </connections>

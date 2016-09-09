@@ -7,9 +7,11 @@
 //
 
 #import "InstituteViewController.h"
+#import "Singleton.h"
 
 @interface InstituteViewController ()
 @property(nonatomic,strong)NSArray *jsonInstituteArr;
+@property(nonatomic)Singleton *SingletonObj;
 
 
 @end
@@ -19,6 +21,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self getInstitutesInfo];
+    _SingletonObj=[Singleton SharedClass];
     // Do any additional setup after loading the view.
 }
 #pragma mark custom methods
@@ -28,6 +31,8 @@
     NSData *data = [NSData dataWithContentsOfFile:filePath];
     self.jsonInstituteArr = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
     NSLog(@"json institutes%@",self.jsonInstituteArr);
+    [self.SingletonObj.InstituteArr addObject:self.jsonInstituteArr];
+    NSLog(@"json institutes%@",self.SingletonObj.InstituteArr);
     if (error != nil) {
         NSLog(@"Error: was not able to load messages.");
         
