@@ -19,6 +19,7 @@
 		6D8368921D7FD9C00078D56D /* ContactUsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D8368911D7FD9C00078D56D /* ContactUsViewController.m */; };
 		6D8368951D800C970078D56D /* InstituteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D8368941D800C970078D56D /* InstituteViewController.m */; };
 		6D8368981D800CBC0078D56D /* InstituteDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D8368971D800CBC0078D56D /* InstituteDetailViewController.m */; };
+		6D8369691D8281D90078D56D /* Singleton.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D8369681D8281D90078D56D /* Singleton.m */; };
 		6DB158431D79906400D535E7 /* leftViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DB158421D79906400D535E7 /* leftViewController.m */; };
 		6DB158481D79951600D535E7 /* left.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DB158471D79951600D535E7 /* left.png */; };
 		6DB158971D7A06ED00D535E7 /* institutesnames.json in Resources */ = {isa = PBXBuildFile; fileRef = 6DB158961D7A06ED00D535E7 /* institutesnames.json */; };
@@ -52,6 +53,8 @@
 		6D8368941D800C970078D56D /* InstituteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InstituteViewController.m; sourceTree = "<group>"; };
 		6D8368961D800CBC0078D56D /* InstituteDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InstituteDetailViewController.h; sourceTree = "<group>"; };
 		6D8368971D800CBC0078D56D /* InstituteDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InstituteDetailViewController.m; sourceTree = "<group>"; };
+		6D8369671D8281D90078D56D /* Singleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Singleton.h; sourceTree = "<group>"; };
+		6D8369681D8281D90078D56D /* Singleton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Singleton.m; sourceTree = "<group>"; };
 		6DB158411D79906400D535E7 /* leftViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = leftViewController.h; sourceTree = "<group>"; };
 		6DB158421D79906400D535E7 /* leftViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = leftViewController.m; sourceTree = "<group>"; };
 		6DB158471D79951600D535E7 /* left.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = left.png; sourceTree = "<group>"; };
@@ -99,6 +102,7 @@
 		2B001AA21D6F3EE7002FD720 /* InstituteFinder */ = {
 			isa = PBXGroup;
 			children = (
+				6D8369661D8281A70078D56D /* Singleton */,
 				6D99C1291D7EAAD80012977F /* AppDelegate */,
 				6D99C12C1D7EAB5E0012977F /* ViewControllers */,
 				2B8A50DC1D81B0CA00E4445F /* Models */,
@@ -122,13 +126,13 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		2B8A50DC1D81B0CA00E4445F /* Models */ = {
+		6D8369661D8281A70078D56D /* Singleton */ = {
 			isa = PBXGroup;
 			children = (
-				2B8A50DD1D81B0FE00E4445F /* Institute.h */,
-				2B8A50DE1D81B0FE00E4445F /* Institute.m */,
+				6D8369671D8281D90078D56D /* Singleton.h */,
+				6D8369681D8281D90078D56D /* Singleton.m */,
 			);
-			name = Models;
+			name = Singleton;
 			sourceTree = "<group>";
 		};
 		6D99C1291D7EAAD80012977F /* AppDelegate */ = {
@@ -333,6 +337,7 @@
 				2B8A50DF1D81B0FE00E4445F /* Institute.m in Sources */,
 				2B001AB11D6F3EE7002FD720 /* InstituteFinder.xcdatamodeld in Sources */,
 				2B001AA81D6F3EE7002FD720 /* AppDelegate.m in Sources */,
+				6D8369691D8281D90078D56D /* Singleton.m in Sources */,
 				2B001AA51D6F3EE7002FD720 /* main.m in Sources */,
 				6D83688F1D7FD7FA0078D56D /* AboutUsViewController.m in Sources */,
 			);

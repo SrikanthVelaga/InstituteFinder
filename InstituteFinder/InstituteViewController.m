@@ -7,11 +7,11 @@
 //
 
 #import "InstituteViewController.h"
-#import "Institute.h"
+#import "Singleton.h"
 
 @interface InstituteViewController ()
-@property(nonatomic,strong)NSArray *institutesArray;
-@property(nonatomic,strong)NSMutableArray *institutesObjectsArray;
+@property(nonatomic,strong)NSArray *jsonInstituteArr;
+@property(nonatomic)Singleton *SingletonObj;
 
 
 @end
@@ -20,40 +20,21 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self initializeObjects];
     [self getInstitutesInfo];
+    _SingletonObj=[Singleton SharedClass];
     // Do any additional setup after loading the view.
 }
 
 #pragma mark - Private API
-- (void)initializeObjects {
-    self.institutesObjectsArray = [[NSMutableArray alloc] initWithCapacity:0];
-}
 
 -(void)getInstitutesInfo{
     NSError *error = nil;
     NSString *filePath = [[NSBundle mainBundle] pathForResource:@"institutesnames"ofType:@"json"];
     NSData *data = [NSData dataWithContentsOfFile:filePath];
-    self.institutesArray = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
-    NSLog(@"json institutes%@",self.institutesArray);
-    
-    for (int i = 0; i < _institutesArray.count; i++) {
-        
-        NSDictionary *instituteDic = self.institutesArray[i];
-        
-        Institute *institute = [[Institute alloc] init];
-        institute.address = instituteDic[@"address"];
-        institute.courses = instituteDic[@"courses"];
-        institute.email = instituteDic[@"email"];
-        institute.name = instituteDic[@"name"];
-        institute.phoneNumber = instituteDic[@"phone number"];
-        [self.institutesObjectsArray addObject:institute];
-    }
-    
-    Institute *institute = self.institutesObjectsArray[0];
-    
-    NSLog(@"Institues details: name: %@ , \n email: %@", institute.name, institute.email);
-    
+    self.jsonInstituteArr = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
+    NSLog(@"json institutes%@",self.jsonInstituteArr);
+    [self.SingletonObj.InstituteArr addObject:self.jsonInstituteArr];
+    NSLog(@"json institutes%@",self.SingletonObj.InstituteArr);
     if (error != nil) {
         NSLog(@"Error: was not able to load messages.");
         
