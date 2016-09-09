@@ -38,6 +38,7 @@
 #pragma mark - IBAction Methods
 - (IBAction)left:(UIBarButtonItem *)sender {
     [self.menuContainerViewController toggleLeftSideMenuCompletion:nil];
+    
 }
 
 - (void)didReceiveMemoryWarning {

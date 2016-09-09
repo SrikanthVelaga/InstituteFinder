@@ -30,7 +30,7 @@
     self.NameLbl.text=[self.InstituteDetailArr valueForKey:@"name"];
     self.PhoneLbl.text=[self.InstituteDetailArr valueForKey:@"phone number"];
     self.EmailLbl.text=[self.InstituteDetailArr valueForKey:@"email"];
-    self.CoursesLbl.text=[[self.InstituteDetailArr valueForKey:@"courses"] objectAtIndex:0];
+    self.CoursesLbl.text = [NSString stringWithFormat:@"%@",[self.InstituteDetailArr valueForKey:@"courses"]];
     self.AddressLbl.text=[self.InstituteDetailArr valueForKey:@"address"];
     
 }

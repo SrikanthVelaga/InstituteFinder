@@ -21,19 +21,27 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self getInstitutesInfo];
-    _SingletonObj=[Singleton SharedClass];
+    
+    
+    
+    
     // Do any additional setup after loading the view.
 }
 
 #pragma mark - Private API
 
 -(void)getInstitutesInfo{
+    NSLog(@"selected course %@",self.seletedcoursestr);
     NSError *error = nil;
     NSString *filePath = [[NSBundle mainBundle] pathForResource:@"institutesnames"ofType:@"json"];
     NSData *data = [NSData dataWithContentsOfFile:filePath];
     self.jsonInstitutesArr = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
-            NSLog(@"json institutes%@",self.jsonInstitutesArr);
-   
+        NSLog(@"json institutes%@",self.jsonInstitutesArr);
+    
+     self.jsonInstitutesArr = [self.jsonInstitutesArr filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"(ANY courses LIKE[cd] %@)", self.seletedcoursestr]];
+    
+    [self.TableView reloadData];
+    
     if (error != nil) {
         NSLog(@"Error: was not able to load messages.");
         

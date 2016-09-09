@@ -9,6 +9,7 @@
 #import "CoursesViewController.h"
 #import "MFSideMenu.h"
 #import "leftViewController.h"
+#import "InstituteViewController.h"
 
 @interface CoursesViewController ()
 @property (weak, nonatomic) IBOutlet UISearchBar *SearchBar;
@@ -56,6 +57,7 @@
 {
     [self.TableView resignFirstResponder];
 }
+
 -(void)searchBar:(UISearchBar*)searchBar textDidChange:(NSString*)text
 {
     if(text.length == 0)
@@ -71,7 +73,8 @@
         {
             NSRange nameRange = [str rangeOfString:text options:NSCaseInsensitiveSearch];
             
-            if(nameRange.location != NSNotFound)             {
+            if(nameRange.location != NSNotFound)
+            {
                 [_filteredArr addObject:str];
             }
         }
@@ -89,6 +92,7 @@
     else
     return self.jsonArr.count;
 }
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
@@ -100,12 +104,20 @@
     if (isFiltered) {
         cell.textLabel.text=[self.filteredArr objectAtIndex:indexPath.row];
         cell.backgroundColor=[UIColor orangeColor];
+    }else {
+        cell.textLabel.text=[self.jsonArr objectAtIndex:indexPath.row];
+        cell.backgroundColor=[UIColor orangeColor];
     }
-    cell.textLabel.text=[self.jsonArr objectAtIndex:indexPath.row];
-    cell.backgroundColor=[UIColor orangeColor];
     return cell;
 }
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    [self performSegueWithIdentifier:@"institutes" sender:self];
+    NSString *str=[self.jsonArr objectAtIndex:indexPath.row];
+    [self performSegueWithIdentifier:@"institutes" sender:str];
+}
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    InstituteViewController *instituteViewController=[segue destinationViewController];
+    instituteViewController.seletedcoursestr=sender;
 }
 @end
