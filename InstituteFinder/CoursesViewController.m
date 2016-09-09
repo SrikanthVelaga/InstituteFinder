@@ -11,9 +11,11 @@
 #import "leftViewController.h"
 
 @interface CoursesViewController ()
+@property (weak, nonatomic) IBOutlet UISearchBar *SearchBar;
 
 @property (strong, nonatomic) IBOutlet UITableView *TableView;
-@property(nonatomic,strong)NSArray *jsonArr;
+@property(nonatomic,strong)NSMutableArray *jsonArr;
+@property(nonatomic,strong)NSMutableArray *filteredArr;
 @end
 
 @implementation CoursesViewController
@@ -49,9 +51,42 @@
     
 }
 #pragma mark delegate Methods
+#pragma mark SearchBar delegate Methods
+-(void)searchBarDidSelect:(UISearchBar*)SearchBar
+{
+    [self.TableView resignFirstResponder];
+}
+-(void)searchBar:(UISearchBar*)searchBar textDidChange:(NSString*)text
+{
+    if(text.length == 0)
+    {
+        isFiltered = NO;
+    }
+    else
+    {
+        isFiltered =YES;
+        _filteredArr = [[NSMutableArray alloc] init];
+        
+        for (NSString* str in _jsonArr)
+        {
+            NSRange nameRange = [str rangeOfString:text options:NSCaseInsensitiveSearch];
+            
+            if(nameRange.location != NSNotFound)             {
+                [_filteredArr addObject:str];
+            }
+        }
+    }
+    
+    [self.TableView reloadData];
+}
+
 #pragma mark tableview delegate Methods
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
+    if (isFiltered) {
+        return self.filteredArr.count;
+    }
+    else
     return self.jsonArr.count;
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -62,6 +97,10 @@
         
         cell=[[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Cell"];
     }
+    if (isFiltered) {
+        cell.textLabel.text=[self.filteredArr objectAtIndex:indexPath.row];
+        cell.backgroundColor=[UIColor orangeColor];
+    }
     cell.textLabel.text=[self.jsonArr objectAtIndex:indexPath.row];
     cell.backgroundColor=[UIColor orangeColor];
     return cell;
@@ -69,5 +108,4 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [self performSegueWithIdentifier:@"institutes" sender:self];
 }
-
 @end

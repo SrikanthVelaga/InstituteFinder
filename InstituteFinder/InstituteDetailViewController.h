@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface InstituteDetailViewController : UIViewController
+@property(nonatomic,strong)NSArray *InstituteDetailArr;
 
 @end

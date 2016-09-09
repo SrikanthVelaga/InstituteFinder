@@ -9,6 +9,11 @@
 #import "InstituteDetailViewController.h"
 
 @interface InstituteDetailViewController ()
+@property (weak, nonatomic) IBOutlet UILabel *NameLbl;
+@property (weak, nonatomic) IBOutlet UILabel *PhoneLbl;
+@property (weak, nonatomic) IBOutlet UILabel *EmailLbl;
+@property (weak, nonatomic) IBOutlet UILabel *CoursesLbl;
+@property (weak, nonatomic) IBOutlet UILabel *AddressLbl;
 
 @end
 
@@ -16,9 +21,19 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    NSLog(@"DeatilArr %@",self.InstituteDetailArr);
+    [self PrepareView];
     // Do any additional setup after loading the view.
 }
-
+-(void)PrepareView
+{
+    self.NameLbl.text=[self.InstituteDetailArr valueForKey:@"name"];
+    self.PhoneLbl.text=[self.InstituteDetailArr valueForKey:@"phone number"];
+    self.EmailLbl.text=[self.InstituteDetailArr valueForKey:@"email"];
+    self.CoursesLbl.text=[[self.InstituteDetailArr valueForKey:@"courses"] objectAtIndex:0];
+    self.AddressLbl.text=[self.InstituteDetailArr valueForKey:@"address"];
+    
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
