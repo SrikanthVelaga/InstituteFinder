@@ -20,6 +20,7 @@
 @implementation LoginViewController
 
 #pragma mark - View LifeCycle Methods
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -43,10 +44,8 @@
     
 }
 
-#pragma mark Private API
-
-
 #pragma mark Delegate Methods
+
 #pragma mark  UITextfield Delegates
 
 -(void)textFieldDidBeginEditing:(UITextField *)textField {

@@ -7,6 +7,7 @@
 //
 
 #import "InstituteDetailViewController.h"
+#import "Institute.h"
 
 @interface InstituteDetailViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *NameLbl;
@@ -15,9 +16,12 @@
 @property (weak, nonatomic) IBOutlet UILabel *CoursesLbl;
 @property (weak, nonatomic) IBOutlet UILabel *AddressLbl;
 
+
 @end
 
 @implementation InstituteDetailViewController
+
+#pragma mark - View LifeCycle Methods
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -25,13 +29,15 @@
     [self PrepareView];
     // Do any additional setup after loading the view.
 }
+#pragma mark Custom Methods
+
 -(void)PrepareView
 {
-    self.NameLbl.text=[self.InstituteDetailArr valueForKey:@"name"];
-    self.PhoneLbl.text=[self.InstituteDetailArr valueForKey:@"phone number"];
-    self.EmailLbl.text=[self.InstituteDetailArr valueForKey:@"email"];
-    self.CoursesLbl.text = [NSString stringWithFormat:@"%@",[self.InstituteDetailArr valueForKey:@"courses"]];
-    self.AddressLbl.text=[self.InstituteDetailArr valueForKey:@"address"];
+    self.NameLbl.text=self.InstituteDetailArr.name;
+    self.PhoneLbl.text=self.InstituteDetailArr.phoneNumber;
+    self.EmailLbl.text=self.InstituteDetailArr.email;
+    self.CoursesLbl.text = [NSString stringWithFormat:@"%@",self.InstituteDetailArr.courses];
+    self.AddressLbl.text=self.InstituteDetailArr.address;
     
 }
 - (void)didReceiveMemoryWarning {

@@ -18,9 +18,10 @@
 
 @implementation leftViewController
 #pragma mark - View LifeCycle Methods
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    self.Tableview.backgroundColor=[UIColor yellowColor];
     self.mutArr=[[NSMutableArray alloc]initWithObjects:@"Course", @"About Us", @"Contact Us", nil];
     // Do any additional setup after loading the view.
 }
@@ -33,6 +34,7 @@
 
 
 #pragma mark delegate Methods
+
 #pragma mark tableview delegate Methods
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
@@ -47,6 +49,7 @@
         cell=[[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:myid];
     }
     cell.textLabel.text=[self.mutArr objectAtIndex:indexPath.row];
+    cell.backgroundColor=[UIColor yellowColor];
     return cell;
     
 }

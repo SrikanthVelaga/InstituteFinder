@@ -8,50 +8,64 @@
 
 #import "InstituteViewController.h"
 #import "InstituteDetailViewController.h"
+#import "Institute.h"
 
 @interface InstituteViewController ()
 @property(nonatomic,strong)NSArray *jsonInstitutesArr;
 @property (weak, nonatomic) IBOutlet UITableView *TableView;
+@property(strong,nonatomic)NSMutableArray *InstitutesArr;
 
 
 @end
 
 @implementation InstituteViewController
 
+#pragma mark - View LifeCycle Methods
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.InstitutesArr=[[NSMutableArray alloc]init];
     [self getInstitutesInfo];
-    
-    
-    
-    
+    self.TableView.backgroundColor=[UIColor orangeColor];
     // Do any additional setup after loading the view.
 }
 
 #pragma mark - Private API
 
 -(void)getInstitutesInfo{
-    NSLog(@"selected course %@",self.seletedcoursestr);
-    NSError *error = nil;
-    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"institutesnames"ofType:@"json"];
-    NSData *data = [NSData dataWithContentsOfFile:filePath];
-    self.jsonInstitutesArr = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
-        NSLog(@"json institutes%@",self.jsonInstitutesArr);
+    NSError *error;
+    NSString *urlString = [NSString stringWithFormat: @"http://madus-macbook-pro.local:8000/institutesnames.json"];
+    NSData *data = [NSData dataWithContentsOfURL: [NSURL URLWithString:urlString]];
+    self.jsonInstitutesArr = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
+    NSLog(@"jsonInstituteArr: %@",self.jsonInstitutesArr);
     
      self.jsonInstitutesArr = [self.jsonInstitutesArr filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"(ANY courses LIKE[cd] %@)", self.seletedcoursestr]];
     
+    for (int i=0; i<self.jsonInstitutesArr.count; i++) {
+        Institute *institute=[[Institute alloc]init];
+        institute.name=[[self.jsonInstitutesArr objectAtIndex:i]valueForKey:@"name"];
+        institute.courses=[[self.jsonInstitutesArr objectAtIndex:i]valueForKey:@"courses"];
+        institute.email=[[self.jsonInstitutesArr objectAtIndex:i]valueForKey:@"email"];
+        institute.address=[[self.jsonInstitutesArr objectAtIndex:i]valueForKey:@"address"];
+        institute.phoneNumber=[[self.jsonInstitutesArr objectAtIndex:i]valueForKey:@"phone number"];
+        [self.InstitutesArr addObject:institute];
+        NSLog(@"InstituteArr %@",self.InstitutesArr);
+    }
     [self.TableView reloadData];
-    
     if (error != nil) {
         NSLog(@"Error: was not able to load messages.");
+       
         
     }
 }
+#pragma mark Delegate Methods
+
 #pragma mark tableview delegate Methods
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     
-        return self.jsonInstitutesArr.count;
+        return self.InstitutesArr.count;
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -61,13 +75,14 @@
         
         cell=[[UITableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"Cell"];
     }
-        cell.textLabel.text=[[self.jsonInstitutesArr objectAtIndex:indexPath.row ]valueForKey:@"name"];
-    cell.detailTextLabel.text=[[self.jsonInstitutesArr objectAtIndex:indexPath.row ]valueForKey:@"phone number"];
+    Institute *InstituteObject=(Institute *)[self.InstitutesArr objectAtIndex:indexPath.row];
+    cell.textLabel.text=InstituteObject.name;
+    cell.detailTextLabel.text=InstituteObject.phoneNumber;
     cell.backgroundColor=[UIColor orangeColor];
     return cell;
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    [self performSegueWithIdentifier:@"InstituteDetail" sender:[self.jsonInstitutesArr objectAtIndex:indexPath.row]];
+    [self performSegueWithIdentifier:@"InstituteDetail" sender:[self.InstitutesArr objectAtIndex:indexPath.row]];
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender

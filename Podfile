@@ -8,5 +8,7 @@ target 'InstituteFinder' do
   # Pods for InstituteFinder
 
 	pod 'MFSideMenu', :git => 'https://github.com/mikefrederick/MFSideMenu'
+    pod 'AFNetworking', '~> 3.0'
+
 
 end

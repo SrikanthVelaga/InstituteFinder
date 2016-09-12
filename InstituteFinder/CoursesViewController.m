@@ -13,10 +13,10 @@
 
 @interface CoursesViewController ()
 @property (weak, nonatomic) IBOutlet UISearchBar *SearchBar;
+@property (strong,nonatomic)NSMutableArray *json;
+@property(nonatomic,strong)NSMutableArray *filteredArr;
 
 @property (strong, nonatomic) IBOutlet UITableView *TableView;
-@property(nonatomic,strong)NSMutableArray *jsonArr;
-@property(nonatomic,strong)NSMutableArray *filteredArr;
 @end
 
 @implementation CoursesViewController
@@ -28,30 +28,27 @@
     self.TableView.backgroundColor=[UIColor orangeColor];
     // Do any additional setup after loading the view, typically from a nib.
 }
-#pragma mark custom methods
+#pragma mark - Private API
+
 -(void)getCoursesInfo{
-    NSError *error = nil;
-    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"coursenames"ofType:@"json"];
-    NSData *data = [NSData dataWithContentsOfFile:filePath];
-   
-    self.jsonArr = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
-    
-    NSLog(@"json %@",self.jsonArr);
-    if (error != nil) {
-        NSLog(@"Error: was not able to load messages.");
-        
-    }
+    NSError *error;
+NSString *urlString = [NSString stringWithFormat: @"http://madus-macbook-pro.local:8000/coursenames.json"];
+    NSData *data = [NSData dataWithContentsOfURL: [NSURL URLWithString:urlString]];
+    self.json = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
+    NSLog(@"json: %@",self.json);
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 #pragma mark - IBAction Methods
+
 - (IBAction)left:(id)sender {
     [self.menuContainerViewController toggleLeftSideMenuCompletion:nil];
     
 }
 #pragma mark delegate Methods
+
 #pragma mark SearchBar delegate Methods
 -(void)searchBarDidSelect:(UISearchBar*)SearchBar
 {
@@ -67,15 +64,15 @@
     else
     {
         isFiltered =YES;
-        _filteredArr = [[NSMutableArray alloc] init];
+        self.filteredArr = [[NSMutableArray alloc] init];
         
-        for (NSString* str in _jsonArr)
+        for (NSString* str in self.json)
         {
             NSRange nameRange = [str rangeOfString:text options:NSCaseInsensitiveSearch];
             
             if(nameRange.location != NSNotFound)
             {
-                [_filteredArr addObject:str];
+                [self.filteredArr addObject:str];
             }
         }
     }
@@ -86,11 +83,12 @@
 #pragma mark tableview delegate Methods
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
+    
     if (isFiltered) {
         return self.filteredArr.count;
     }
     else
-    return self.jsonArr.count;
+        return self.json.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -100,19 +98,19 @@
     if (cell==nil) {
         
         cell=[[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Cell"];
-    }
-    if (isFiltered) {
+    }if (isFiltered) {
         cell.textLabel.text=[self.filteredArr objectAtIndex:indexPath.row];
         cell.backgroundColor=[UIColor orangeColor];
     }else {
-        cell.textLabel.text=[self.jsonArr objectAtIndex:indexPath.row];
+    
+        cell.textLabel.text=[self.json objectAtIndex:indexPath.row];
         cell.backgroundColor=[UIColor orangeColor];
     }
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSString *str=[self.jsonArr objectAtIndex:indexPath.row];
+   NSString *str=[self.json objectAtIndex:indexPath.row];
     [self performSegueWithIdentifier:@"institutes" sender:str];
 }
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender

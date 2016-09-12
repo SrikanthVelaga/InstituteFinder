@@ -7,8 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Institute.h"
 
 @interface InstituteDetailViewController : UIViewController
-@property(nonatomic,strong)NSDictionary *InstituteDetailArr;
+@property(strong,nonatomic)Institute *InstituteDetailArr;
+
 
 @end

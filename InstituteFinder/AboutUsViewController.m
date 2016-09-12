@@ -15,23 +15,28 @@
 
 @implementation AboutUsViewController
 
+#pragma mark - View LifeCycle Methods
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self aboutusInfo];
     self.AboutUsLabel.text=self.aboutusstr;
     // Do any additional setup after loading the view.
 }
-#pragma mark - IBAction Methods
-- (IBAction)left:(UIBarButtonItem *)sender {
-    [self.menuContainerViewController toggleLeftSideMenuCompletion:nil];
-}
-#pragma mark custom methods
+
+#pragma mark - Private API
 
 -(void)aboutusInfo{
     
     self.aboutusstr=@"This app is about giving you a quick glimpse of what's happening in hyderabad";
     NSLog(@"aboutusinfo%@", self.aboutusstr);
     
+}
+
+#pragma mark - IBAction Methods
+
+- (IBAction)left:(UIBarButtonItem *)sender {
+    [self.menuContainerViewController toggleLeftSideMenuCompletion:nil];
 }
 
 - (void)didReceiveMemoryWarning {
