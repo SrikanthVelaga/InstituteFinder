@@ -25,7 +25,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    NSLog(@"DeatilArr %@",self.InstituteDetailArr);
+   
     [self PrepareView];
     // Do any additional setup after loading the view.
 }
@@ -39,6 +39,8 @@
     self.CoursesLbl.text = [NSString stringWithFormat:@"%@",self.InstituteDetailArr.courses];
     self.AddressLbl.text=self.InstituteDetailArr.address;
     
+
+   
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
