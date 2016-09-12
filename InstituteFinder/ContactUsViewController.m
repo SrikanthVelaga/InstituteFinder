@@ -28,6 +28,7 @@
     // Do any additional setup after loading the view.
 }
 #pragma mark custom methods
+
 -(void)contactusInfo{
     self.contactusdic=[NSDictionary dictionaryWithObjectsAndKeys:@"dinesh",@"name",@"9705873797",@"phone number",@"mvfeast1@gmail.com", @"email", nil];
     NSLog(@"contactusinfo %@", self.contactusdic);
