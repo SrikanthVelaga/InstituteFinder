@@ -10,11 +10,12 @@
 #import "MFSideMenu.h"
 #import "leftViewController.h"
 #import "InstituteViewController.h"
+#import "HttpClient.h"
 
 @interface CoursesViewController ()
 @property (weak, nonatomic) IBOutlet UISearchBar *SearchBar;
 
-@property (strong, nonatomic) IBOutlet UITableView *TableView;
+@property (strong, nonatomic) IBOutlet UITableView *tableView;
 @property(nonatomic,strong)NSMutableArray *jsonArr;
 @property(nonatomic,strong)NSMutableArray *filteredArr;
 @end
@@ -24,25 +25,36 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self getCoursesInfo];
-    self.TableView.backgroundColor=[UIColor orangeColor];
+    [self PrepareView];
+//    [self.tableView reloadData];
+
+    
+}
+
+-(void)PrepareView
+    {
+    HttpClient *client = [[HttpClient alloc]init];
+    NSString *urlStr = @"http://harinaths-mac-mini.local:8000/coursenames.json";
+    [client getServiceCall:urlStr andCompletion:^(id json, NSError *error) {
+        if (error) {
+            NSLog(@"%@",[error localizedDescription]);
+        }
+        if ([json isKindOfClass:[NSArray class]]) {
+            self.jsonArr=[[NSMutableArray alloc]init];
+            [self.jsonArr addObjectsFromArray:json];
+            
+        }
+        NSLog(@"JSON %@",self.jsonArr);
+        [self.tableView reloadData];
+
+           }];
+
+
+    //self.tableView.backgroundColor=[UIColor orangeColor];
     // Do any additional setup after loading the view, typically from a nib.
 }
 #pragma mark custom methods
--(void)getCoursesInfo{
-    NSError *error = nil;
-    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"coursenames"ofType:@"json"];
-    NSData *data = [NSData dataWithContentsOfFile:filePath];
-   
-    self.jsonArr = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
-    
-    NSLog(@"json %@",self.jsonArr);
-    if (error != nil) {
-        NSLog(@"Error: was not able to load messages.");
-        
-    }
-}
-- (void)didReceiveMemoryWarning {
+    - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
@@ -55,7 +67,7 @@
 #pragma mark SearchBar delegate Methods
 -(void)searchBarDidSelect:(UISearchBar*)SearchBar
 {
-    [self.TableView resignFirstResponder];
+    [self.tableView resignFirstResponder];
 }
 
 -(void)searchBar:(UISearchBar*)searchBar textDidChange:(NSString*)text
@@ -80,7 +92,7 @@
         }
     }
     
-    [self.TableView reloadData];
+    [self.tableView reloadData];
 }
 
 #pragma mark tableview delegate Methods

@@ -15,11 +15,11 @@
 		2B001AB31D6F3EE7002FD720 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2B001AB21D6F3EE7002FD720 /* Assets.xcassets */; };
 		2B001AB61D6F3EE7002FD720 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B001AB41D6F3EE7002FD720 /* LaunchScreen.storyboard */; };
 		2B171C461D82F86F0081E0CB /* Institute.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B171C441D82F86F0081E0CB /* Institute.m */; };
+		6BBC804C1D869F10007B7DB5 /* HttpClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BBC804B1D869F10007B7DB5 /* HttpClient.m */; };
 		6D83688F1D7FD7FA0078D56D /* AboutUsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D83688E1D7FD7FA0078D56D /* AboutUsViewController.m */; };
 		6D8368921D7FD9C00078D56D /* ContactUsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D8368911D7FD9C00078D56D /* ContactUsViewController.m */; };
 		6D8368951D800C970078D56D /* InstituteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D8368941D800C970078D56D /* InstituteViewController.m */; };
 		6D8368981D800CBC0078D56D /* InstituteDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D8368971D800CBC0078D56D /* InstituteDetailViewController.m */; };
-		6D8369691D8281D90078D56D /* Singleton.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D8369681D8281D90078D56D /* Singleton.m */; };
 		6DB158431D79906400D535E7 /* leftViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DB158421D79906400D535E7 /* leftViewController.m */; };
 		6DB158481D79951600D535E7 /* left.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DB158471D79951600D535E7 /* left.png */; };
 		6DB158971D7A06ED00D535E7 /* institutesnames.json in Resources */ = {isa = PBXBuildFile; fileRef = 6DB158961D7A06ED00D535E7 /* institutesnames.json */; };
@@ -45,6 +45,8 @@
 		2B171C441D82F86F0081E0CB /* Institute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Institute.m; sourceTree = "<group>"; };
 		2B171C451D82F86F0081E0CB /* Institute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Institute.h; sourceTree = "<group>"; };
 		516C822A92CA063B33E27D8F /* libPods-InstituteFinder.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-InstituteFinder.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6BBC804A1D869F03007B7DB5 /* HttpClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HttpClient.h; sourceTree = "<group>"; };
+		6BBC804B1D869F10007B7DB5 /* HttpClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HttpClient.m; sourceTree = "<group>"; };
 		6D83688D1D7FD7FA0078D56D /* AboutUsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutUsViewController.h; sourceTree = "<group>"; };
 		6D83688E1D7FD7FA0078D56D /* AboutUsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutUsViewController.m; sourceTree = "<group>"; };
 		6D8368901D7FD9C00078D56D /* ContactUsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactUsViewController.h; sourceTree = "<group>"; };
@@ -53,8 +55,6 @@
 		6D8368941D800C970078D56D /* InstituteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InstituteViewController.m; sourceTree = "<group>"; };
 		6D8368961D800CBC0078D56D /* InstituteDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InstituteDetailViewController.h; sourceTree = "<group>"; };
 		6D8368971D800CBC0078D56D /* InstituteDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InstituteDetailViewController.m; sourceTree = "<group>"; };
-		6D8369671D8281D90078D56D /* Singleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Singleton.h; sourceTree = "<group>"; };
-		6D8369681D8281D90078D56D /* Singleton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Singleton.m; sourceTree = "<group>"; };
 		6DB158411D79906400D535E7 /* leftViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = leftViewController.h; sourceTree = "<group>"; };
 		6DB158421D79906400D535E7 /* leftViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = leftViewController.m; sourceTree = "<group>"; };
 		6DB158471D79951600D535E7 /* left.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = left.png; sourceTree = "<group>"; };
@@ -102,7 +102,6 @@
 		2B001AA21D6F3EE7002FD720 /* InstituteFinder */ = {
 			isa = PBXGroup;
 			children = (
-				6D8369661D8281A70078D56D /* Singleton */,
 				6D99C1291D7EAAD80012977F /* AppDelegate */,
 				6D99C12C1D7EAB5E0012977F /* ViewControllers */,
 				2B001AAC1D6F3EE7002FD720 /* Main.storyboard */,
@@ -125,15 +124,6 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		6D8369661D8281A70078D56D /* Singleton */ = {
-			isa = PBXGroup;
-			children = (
-				6D8369671D8281D90078D56D /* Singleton.h */,
-				6D8369681D8281D90078D56D /* Singleton.m */,
-			);
-			name = Singleton;
-			sourceTree = "<group>";
-		};
 		6D99C1291D7EAAD80012977F /* AppDelegate */ = {
 			isa = PBXGroup;
 			children = (
@@ -141,6 +131,8 @@
 				2B001AA71D6F3EE7002FD720 /* AppDelegate.m */,
 				2B171C451D82F86F0081E0CB /* Institute.h */,
 				2B171C441D82F86F0081E0CB /* Institute.m */,
+				6BBC804A1D869F03007B7DB5 /* HttpClient.h */,
+				6BBC804B1D869F10007B7DB5 /* HttpClient.m */,
 			);
 			name = AppDelegate;
 			sourceTree = "<group>";
@@ -148,10 +140,10 @@
 		6D99C12C1D7EAB5E0012977F /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				6DB1589A1D7A108900D535E7 /* LoginViewController.h */,
-				6DB1589B1D7A108900D535E7 /* LoginViewController.m */,
 				6DB158411D79906400D535E7 /* leftViewController.h */,
 				6DB158421D79906400D535E7 /* leftViewController.m */,
+				6DB1589A1D7A108900D535E7 /* LoginViewController.h */,
+				6DB1589B1D7A108900D535E7 /* LoginViewController.m */,
 				2B001AA91D6F3EE7002FD720 /* CoursesViewController.h */,
 				2B001AAA1D6F3EE7002FD720 /* CoursesViewController.m */,
 				6D83688D1D7FD7FA0078D56D /* AboutUsViewController.h */,
@@ -338,8 +330,8 @@
 				6DB1589C1D7A108900D535E7 /* LoginViewController.m in Sources */,
 				2B001AB11D6F3EE7002FD720 /* InstituteFinder.xcdatamodeld in Sources */,
 				2B001AA81D6F3EE7002FD720 /* AppDelegate.m in Sources */,
-				6D8369691D8281D90078D56D /* Singleton.m in Sources */,
 				2B001AA51D6F3EE7002FD720 /* main.m in Sources */,
+				6BBC804C1D869F10007B7DB5 /* HttpClient.m in Sources */,
 				6D83688F1D7FD7FA0078D56D /* AboutUsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
