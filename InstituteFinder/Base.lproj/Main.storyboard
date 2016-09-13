@@ -363,7 +363,6 @@
                     </navigationItem>
                     <connections>
                         <outlet property="AboutUsLabel" destination="lAq-OD-fwr" id="ScV-Xg-FTg"/>
-                        <outlet property="search" destination="MxB-Lc-64c" id="YzH-Sq-Vy4"/>
                         <outlet property="searchDisplayController" destination="ZsN-nc-TJW" id="37s-kX-Ag9"/>
                     </connections>
                 </viewController>
