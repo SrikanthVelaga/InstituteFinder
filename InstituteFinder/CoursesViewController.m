@@ -10,8 +10,8 @@
 #import "MFSideMenu.h"
 #import "leftViewController.h"
 #import "InstituteViewController.h"
-#import "HttpClient.h"
 #import "CoursesTableViewCell.h"
+#import "IFHttpClient.h"
 
 @interface CoursesViewController ()
 @property (weak, nonatomic) IBOutlet UISearchBar *SearchBar;
@@ -33,23 +33,21 @@
 }
 
 -(void)PrepareView
-    {
-    HttpClient *client = [[HttpClient alloc]init];
-    NSString *urlStr = @"http://asquares-mac-mini-2.local:8000/coursenames.json";
-    [client getServiceCall:urlStr andCompletion:^(id json, NSError *error) {
-        if (error) {
-            NSLog(@"%@",[error localizedDescription]);
-        }
-        if ([json isKindOfClass:[NSArray class]]) {
+{
+    
+    [[IFHttpClient sharedHttpClient] getCoursesWithParameters:nil success:^(NSArray *result) {
+        if ([result isKindOfClass:[NSArray class]]) {
             self.jsonArr=[[NSMutableArray alloc]init];
-            [self.jsonArr addObjectsFromArray:json];
+            [self.jsonArr addObjectsFromArray:result];
             
         }
         NSLog(@"JSON %@",self.jsonArr);
         [self.tableView reloadData];
 
-           }];
-
+        
+    } failure:^(NSError *error) {
+        
+    }];
 
     //self.tableView.backgroundColor=[UIColor orangeColor];
     // Do any additional setup after loading the view, typically from a nib.
