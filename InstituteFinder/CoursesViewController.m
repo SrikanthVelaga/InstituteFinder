@@ -14,7 +14,7 @@
 
 @interface CoursesViewController ()
 @property (weak, nonatomic) IBOutlet UISearchBar *SearchBar;
-@property (strong,nonatomic)NSMutableArray *json;
+@property (strong,nonatomic)NSMutableArray *jsonArr;
 @property(nonatomic,strong)NSMutableArray *filteredArr;
 
 @property (strong, nonatomic) IBOutlet UITableView *TableView;
@@ -45,7 +45,7 @@
             
         }
         NSLog(@"JSON %@",self.jsonArr);
-        [self.tableView reloadData];
+        [self.TableView reloadData];
 
            }];
 
@@ -59,8 +59,8 @@
     NSError *error;
 NSString *urlString = [NSString stringWithFormat: @"http://madus-macbook-pro.local:8000/coursenames.json"];
     NSData *data = [NSData dataWithContentsOfURL: [NSURL URLWithString:urlString]];
-    self.json = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
-    NSLog(@"json: %@",self.json);
+    self.jsonArr = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
+    NSLog(@"json: %@",self.jsonArr);
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -77,7 +77,7 @@ NSString *urlString = [NSString stringWithFormat: @"http://madus-macbook-pro.loc
 #pragma mark SearchBar delegate Methods
 -(void)searchBarDidSelect:(UISearchBar*)SearchBar
 {
-    [self.tableView resignFirstResponder];
+    [self.TableView resignFirstResponder];
 }
 
 -(void)searchBar:(UISearchBar*)searchBar textDidChange:(NSString*)text
@@ -91,7 +91,7 @@ NSString *urlString = [NSString stringWithFormat: @"http://madus-macbook-pro.loc
         isFiltered =YES;
         self.filteredArr = [[NSMutableArray alloc] init];
         
-        for (NSString* str in self.json)
+        for (NSString* str in self.jsonArr)
         {
             NSRange nameRange = [str rangeOfString:text options:NSCaseInsensitiveSearch];
             
@@ -102,7 +102,7 @@ NSString *urlString = [NSString stringWithFormat: @"http://madus-macbook-pro.loc
         }
     }
     
-    [self.tableView reloadData];
+    [self.TableView reloadData];
 }
 
 #pragma mark tableview delegate Methods
@@ -113,7 +113,7 @@ NSString *urlString = [NSString stringWithFormat: @"http://madus-macbook-pro.loc
         return self.filteredArr.count;
     }
     else
-        return self.json.count;
+        return self.jsonArr.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -128,14 +128,14 @@ NSString *urlString = [NSString stringWithFormat: @"http://madus-macbook-pro.loc
         cell.backgroundColor=[UIColor orangeColor];
     }else {
     
-        cell.textLabel.text=[self.json objectAtIndex:indexPath.row];
+        cell.textLabel.text=[self.jsonArr objectAtIndex:indexPath.row];
         cell.backgroundColor=[UIColor orangeColor];
     }
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-   NSString *str=[self.json objectAtIndex:indexPath.row];
+   NSString *str=[self.jsonArr objectAtIndex:indexPath.row];
     [self performSegueWithIdentifier:@"institutes" sender:str];
 }
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender

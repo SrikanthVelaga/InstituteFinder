@@ -3,8 +3,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
-        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
-        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -220,16 +218,6 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n0B-dt-QO2">
-                                <rect key="frame" x="1" y="509" width="63" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="7h0-2s-k2j"/>
-                                    <constraint firstAttribute="width" constant="63" id="hJ3-Vb-Ag9"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RXH-4o-u3c">
                                 <rect key="frame" x="166" y="146" width="144" height="12"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -313,13 +301,10 @@
                             <constraint firstAttribute="trailingMargin" secondItem="is5-KE-AuT" secondAttribute="trailing" constant="230" id="GNl-QB-ZM8">
                                 <variation key="widthClass=compact" constant="219"/>
                             </constraint>
-                            <constraint firstItem="1XY-Lg-ul2" firstAttribute="leading" secondItem="n0B-dt-QO2" secondAttribute="leading" id="H4f-lO-96x"/>
                             <constraint firstItem="1XY-Lg-ul2" firstAttribute="leading" secondItem="R2n-S8-Axy" secondAttribute="leadingMargin" constant="-11" id="NgH-Oc-8ZR"/>
                             <constraint firstAttribute="trailingMargin" secondItem="45F-gv-UvF" secondAttribute="trailing" constant="4" id="PWV-wV-M3N"/>
                             <constraint firstItem="45F-gv-UvF" firstAttribute="top" secondItem="bTU-tP-2A1" secondAttribute="bottom" constant="34" id="XP0-lB-rQF"/>
                             <constraint firstAttribute="trailingMargin" secondItem="bTU-tP-2A1" secondAttribute="trailing" constant="44" id="XeZ-eo-5fn"/>
-                            <constraint firstItem="UEX-j1-bIn" firstAttribute="trailing" secondItem="n0B-dt-QO2" secondAttribute="trailing" id="a36-Su-UOT"/>
-                            <constraint firstItem="40j-4v-ffJ" firstAttribute="top" secondItem="n0B-dt-QO2" secondAttribute="bottom" constant="137" id="aWc-vs-wwe"/>
                             <constraint firstItem="Lq7-MO-KVV" firstAttribute="top" secondItem="45F-gv-UvF" secondAttribute="bottom" constant="8" symbolic="YES" id="ccp-fc-OdO"/>
                             <constraint firstItem="45F-gv-UvF" firstAttribute="leading" secondItem="UEX-j1-bIn" secondAttribute="trailing" constant="28" id="cpg-8H-vlm"/>
                             <constraint firstItem="RXH-4o-u3c" firstAttribute="leading" secondItem="1XY-Lg-ul2" secondAttribute="trailing" constant="32" id="dgM-pP-LIj"/>
@@ -328,7 +313,6 @@
                             </constraint>
                             <constraint firstItem="bTU-tP-2A1" firstAttribute="top" secondItem="RXH-4o-u3c" secondAttribute="bottom" constant="25" id="h2r-o6-bGE"/>
                             <constraint firstItem="is5-KE-AuT" firstAttribute="top" secondItem="Ktv-Mh-bv3" secondAttribute="bottom" constant="25" id="jwp-gB-LDp"/>
-                            <constraint firstItem="n0B-dt-QO2" firstAttribute="baseline" secondItem="Lq7-MO-KVV" secondAttribute="firstBaseline" id="moK-94-VEE"/>
                             <constraint firstItem="UEX-j1-bIn" firstAttribute="top" secondItem="1XY-Lg-ul2" secondAttribute="bottom" constant="21" id="nQ2-VY-c8U"/>
                             <constraint firstItem="roU-wj-7Rm" firstAttribute="top" secondItem="UEX-j1-bIn" secondAttribute="bottom" constant="64" id="taG-gj-jyW"/>
                             <constraint firstItem="1XY-Lg-ul2" firstAttribute="top" secondItem="is5-KE-AuT" secondAttribute="bottom" constant="25" id="w3H-nm-xXj">
@@ -341,12 +325,10 @@
                                 <exclude reference="eb5-tz-fty"/>
                                 <exclude reference="jwp-gB-LDp"/>
                                 <exclude reference="9DX-oE-wP0"/>
-                                <exclude reference="H4f-lO-96x"/>
                                 <exclude reference="NgH-Oc-8ZR"/>
                                 <exclude reference="w3H-nm-xXj"/>
                                 <exclude reference="1Iz-0w-A0j"/>
                                 <exclude reference="BTb-Yg-akD"/>
-                                <exclude reference="a36-Su-UOT"/>
                                 <exclude reference="nQ2-VY-c8U"/>
                                 <exclude reference="dgM-pP-LIj"/>
                                 <exclude reference="taG-gj-jyW"/>
@@ -356,10 +338,8 @@
                                 <exclude reference="PWV-wV-M3N"/>
                                 <exclude reference="XP0-lB-rQF"/>
                                 <exclude reference="cpg-8H-vlm"/>
-                                <exclude reference="moK-94-VEE"/>
                                 <exclude reference="9Fk-c3-fDo"/>
                                 <exclude reference="ccp-fc-OdO"/>
-                                <exclude reference="aWc-vs-wwe"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -368,12 +348,10 @@
                                 <include reference="eb5-tz-fty"/>
                                 <include reference="jwp-gB-LDp"/>
                                 <include reference="9DX-oE-wP0"/>
-                                <include reference="H4f-lO-96x"/>
                                 <include reference="NgH-Oc-8ZR"/>
                                 <include reference="w3H-nm-xXj"/>
                                 <include reference="1Iz-0w-A0j"/>
                                 <include reference="BTb-Yg-akD"/>
-                                <include reference="a36-Su-UOT"/>
                                 <include reference="nQ2-VY-c8U"/>
                                 <include reference="dgM-pP-LIj"/>
                                 <include reference="taG-gj-jyW"/>
@@ -383,10 +361,8 @@
                                 <include reference="PWV-wV-M3N"/>
                                 <include reference="XP0-lB-rQF"/>
                                 <include reference="cpg-8H-vlm"/>
-                                <include reference="moK-94-VEE"/>
                                 <include reference="9Fk-c3-fDo"/>
                                 <include reference="ccp-fc-OdO"/>
-                                <include reference="aWc-vs-wwe"/>
                             </mask>
                         </variation>
                     </view>
@@ -396,7 +372,6 @@
                         <outlet property="AddressLbl" destination="Lq7-MO-KVV" id="sVM-O8-KMI"/>
                         <outlet property="CoursesLbl" destination="45F-gv-UvF" id="EjQ-2b-sgd"/>
                         <outlet property="EmailLbl" destination="bTU-tP-2A1" id="CWu-S3-1xj"/>
-                        <outlet property="NameLbl" destination="TEV-xi-Au6" id="R9t-G8-HOm"/>
                         <outlet property="PhoneLbl" destination="RXH-4o-u3c" id="I0w-sD-Lba"/>
                     </connections>
                 </viewController>
@@ -634,7 +609,7 @@
                                     <action selector="Login:" destination="uXJ-9J-2H1" eventType="touchUpInside" id="ukK-nI-NOB"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9fJ-Kk-oS3">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9fJ-Kk-oS3">
                                 <rect key="frame" x="236" y="225" width="46" height="30"/>
                                 <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -776,4 +751,7 @@
     <resources>
         <image name="left.png" width="28" height="18"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="uhQ-CO-gge"/>
+    </inferredMetricsTieBreakers>
 </document>
