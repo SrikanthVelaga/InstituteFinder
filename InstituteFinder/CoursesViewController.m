@@ -11,13 +11,14 @@
 #import "leftViewController.h"
 #import "InstituteViewController.h"
 #import "HttpClient.h"
+#import "CoursesTableViewCell.h"
 
 @interface CoursesViewController ()
 @property (weak, nonatomic) IBOutlet UISearchBar *SearchBar;
-@property (strong,nonatomic)NSMutableArray *jsonArr;
-@property(nonatomic,strong)NSMutableArray *filteredArr;
 
-@property (strong, nonatomic) IBOutlet UITableView *TableView;
+@property (strong, nonatomic) IBOutlet UITableView *tableView;
+@property(nonatomic,strong)NSMutableArray *jsonArr;
+@property(nonatomic,strong)NSMutableArray *filteredArr;
 @end
 
 @implementation CoursesViewController
@@ -34,7 +35,7 @@
 -(void)PrepareView
     {
     HttpClient *client = [[HttpClient alloc]init];
-    NSString *urlStr = @"http://harinaths-mac-mini.local:8000/coursenames.json";
+    NSString *urlStr = @"http://asquares-mac-mini-2.local:8000/coursenames.json";
     [client getServiceCall:urlStr andCompletion:^(id json, NSError *error) {
         if (error) {
             NSLog(@"%@",[error localizedDescription]);
@@ -45,7 +46,7 @@
             
         }
         NSLog(@"JSON %@",self.jsonArr);
-        [self.TableView reloadData];
+        [self.tableView reloadData];
 
            }];
 
@@ -53,31 +54,21 @@
     //self.tableView.backgroundColor=[UIColor orangeColor];
     // Do any additional setup after loading the view, typically from a nib.
 }
-#pragma mark - Private API
-
--(void)getCoursesInfo{
-    NSError *error;
-NSString *urlString = [NSString stringWithFormat: @"http://madus-macbook-pro.local:8000/coursenames.json"];
-    NSData *data = [NSData dataWithContentsOfURL: [NSURL URLWithString:urlString]];
-    self.jsonArr = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
-    NSLog(@"json: %@",self.jsonArr);
-}
-- (void)didReceiveMemoryWarning {
+#pragma mark custom methods
+    - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 #pragma mark - IBAction Methods
-
 - (IBAction)left:(id)sender {
     [self.menuContainerViewController toggleLeftSideMenuCompletion:nil];
     
 }
 #pragma mark delegate Methods
-
 #pragma mark SearchBar delegate Methods
 -(void)searchBarDidSelect:(UISearchBar*)SearchBar
 {
-    [self.TableView resignFirstResponder];
+    [self.tableView resignFirstResponder];
 }
 
 -(void)searchBar:(UISearchBar*)searchBar textDidChange:(NSString*)text
@@ -89,53 +80,54 @@ NSString *urlString = [NSString stringWithFormat: @"http://madus-macbook-pro.loc
     else
     {
         isFiltered =YES;
-        self.filteredArr = [[NSMutableArray alloc] init];
+        _filteredArr = [[NSMutableArray alloc] init];
         
-        for (NSString* str in self.jsonArr)
+        for (NSString* str in _jsonArr)
         {
             NSRange nameRange = [str rangeOfString:text options:NSCaseInsensitiveSearch];
             
             if(nameRange.location != NSNotFound)
             {
-                [self.filteredArr addObject:str];
+                [_filteredArr addObject:str];
             }
         }
     }
     
-    [self.TableView reloadData];
+    [self.tableView reloadData];
 }
 
 #pragma mark tableview delegate Methods
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    
     if (isFiltered) {
         return self.filteredArr.count;
     }
     else
-        return self.jsonArr.count;
+    return self.jsonArr.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
-    UITableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:@"Cell"];
-    if (cell==nil) {
-        
-        cell=[[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Cell"];
-    }if (isFiltered) {
-        cell.textLabel.text=[self.filteredArr objectAtIndex:indexPath.row];
+    CoursesTableViewCell *cell=nil;
+    cell=(CoursesTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"CoursesCell"];
+    if (cell==nil)
+    {
+        NSArray *nib=[[NSBundle mainBundle]loadNibNamed:@"CoursesTableViewCell" owner:self options:nil];
+        cell=[nib objectAtIndex:0];
+    }
+    if (isFiltered) {
+        cell.nameLbl.text=[self.filteredArr objectAtIndex:indexPath.row];
         cell.backgroundColor=[UIColor orangeColor];
     }else {
-    
-        cell.textLabel.text=[self.jsonArr objectAtIndex:indexPath.row];
+        cell.nameLbl.text=[self.jsonArr objectAtIndex:indexPath.row];
         cell.backgroundColor=[UIColor orangeColor];
     }
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-   NSString *str=[self.jsonArr objectAtIndex:indexPath.row];
+    NSString *str=[self.jsonArr objectAtIndex:indexPath.row];
     [self performSegueWithIdentifier:@"institutes" sender:str];
 }
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender

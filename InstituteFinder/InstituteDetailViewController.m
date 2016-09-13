@@ -16,12 +16,9 @@
 @property (weak, nonatomic) IBOutlet UILabel *CoursesLbl;
 @property (weak, nonatomic) IBOutlet UILabel *AddressLbl;
 
-
 @end
 
 @implementation InstituteDetailViewController
-
-#pragma mark - View LifeCycle Methods
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -29,14 +26,12 @@
     [self PrepareView];
     // Do any additional setup after loading the view.
 }
-#pragma mark Custom Methods
-
 -(void)PrepareView
 {
-    self.NameLbl.text=self.InstituteDetailArr.name;
+       self.NameLbl.text=self.InstituteDetailArr.name;
     self.PhoneLbl.text=self.InstituteDetailArr.phoneNumber;
-    self.EmailLbl.text=self.InstituteDetailArr.email;
-    self.CoursesLbl.text = [NSString stringWithFormat:@"%@",self.InstituteDetailArr.courses];
+    self.EmailLbl.text= self.InstituteDetailArr.email;
+    self.CoursesLbl.text =[NSString stringWithFormat:@"%@",self.InstituteDetailArr.courses];
     self.AddressLbl.text=self.InstituteDetailArr.address;
     
 

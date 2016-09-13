@@ -10,7 +10,6 @@
 #import "Institute.h"
 
 @interface InstituteDetailViewController : UIViewController
-@property(strong,nonatomic)Institute *InstituteDetailArr;
-
+@property(nonatomic,strong)Institute *InstituteDetailArr;
 
 @end

@@ -11,26 +11,23 @@
 
 @interface ContactUsViewController ()
 @property(strong,nonatomic)NSDictionary *contactusdic;
-@property (strong, nonatomic) IBOutlet UILabel *namelabel;
-@property (strong, nonatomic) IBOutlet UILabel *emaillabel;
-@property (strong, nonatomic) IBOutlet UILabel *phonenumberlabel;
-
+@property (strong, nonatomic) IBOutlet UITextField *nametextfield;
+@property (strong, nonatomic) IBOutlet UITextField *phonenotextfield;
+@property (strong, nonatomic) IBOutlet UITextField *emailtextfield;
 
 @end
 
 @implementation ContactUsViewController
 
-#pragma mark - View LifeCycle Methods
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self contactusInfo];
-    self.namelabel.text=[self.contactusdic valueForKey:@"name"];
-    self.phonenumberlabel.text=[self.contactusdic valueForKey:@"phone number"];
-    self.emaillabel.text=[self.contactusdic valueForKey:@"email"];
+    self.nametextfield.text=[self.contactusdic valueForKey:@"name"];
+    self.phonenotextfield.text=[self.contactusdic valueForKey:@"phone number"];
+    self.emailtextfield.text=[self.contactusdic valueForKey:@"email"];
     // Do any additional setup after loading the view.
 }
-#pragma mark Custom Methods
+#pragma mark custom methods
 
 -(void)contactusInfo{
     self.contactusdic=[NSDictionary dictionaryWithObjectsAndKeys:@"dinesh",@"name",@"9705873797",@"phone number",@"mvfeast1@gmail.com", @"email", nil];
@@ -40,7 +37,6 @@
 
 
 #pragma mark - IBAction Methods
-
 - (IBAction)left:(UIBarButtonItem *)sender {
     [self.menuContainerViewController toggleLeftSideMenuCompletion:nil];
     
