@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="n9W-bq-GnC">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="n9W-bq-GnC">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -107,6 +107,60 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="YAD-PS-hYH">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="InstituteCell" rowHeight="93" id="FAe-t5-rOG" customClass="InstituteTableViewCell">
+                                        <rect key="frame" x="0.0" y="114" width="320" height="93"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="FAe-t5-rOG" id="72p-wj-ac3">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="92"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9by-B0-aRb">
+                                                    <rect key="frame" x="88" y="16" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZB1-Nc-5tC">
+                                                    <rect key="frame" x="266" y="31" width="46" height="30"/>
+                                                    <state key="normal" title="Button"/>
+                                                    <connections>
+                                                        <action selector="goToDetailViewWithSender:" destination="FAe-t5-rOG" eventType="touchUpInside" id="uTy-WE-tKO"/>
+                                                    </connections>
+                                                </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fnB-d3-pwK">
+                                                    <rect key="frame" x="88" y="40" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pWM-2n-f4I">
+                                                    <rect key="frame" x="8" y="4" width="72" height="84"/>
+                                                    <color key="backgroundColor" red="1" green="0.062785506079999998" blue="0.01639994153" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="84" id="lFl-ZN-7CU"/>
+                                                        <constraint firstAttribute="width" constant="72" id="zIT-X3-zb3"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="ZB1-Nc-5tC" firstAttribute="centerY" secondItem="pWM-2n-f4I" secondAttribute="centerY" id="QR0-nj-pix"/>
+                                                <constraint firstAttribute="leadingMargin" secondItem="pWM-2n-f4I" secondAttribute="leading" id="Xal-ow-YSU"/>
+                                                <constraint firstItem="pWM-2n-f4I" firstAttribute="centerY" secondItem="72p-wj-ac3" secondAttribute="centerY" id="c1F-ay-E3N"/>
+                                                <constraint firstItem="9by-B0-aRb" firstAttribute="top" secondItem="72p-wj-ac3" secondAttribute="topMargin" constant="8" id="eIf-ys-nhG"/>
+                                                <constraint firstItem="9by-B0-aRb" firstAttribute="leading" secondItem="pWM-2n-f4I" secondAttribute="trailing" constant="8" id="hAB-5J-5Ab"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="ZB1-Nc-5tC" secondAttribute="trailing" id="n8w-oC-6nm"/>
+                                                <constraint firstItem="fnB-d3-pwK" firstAttribute="leading" secondItem="9by-B0-aRb" secondAttribute="leading" id="oaw-Fd-3C4"/>
+                                                <constraint firstItem="fnB-d3-pwK" firstAttribute="top" secondItem="9by-B0-aRb" secondAttribute="bottom" constant="3" id="uXz-mD-imL"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="imageview" destination="pWM-2n-f4I" id="KXK-8c-3gO"/>
+                                            <outlet property="nameLbl" destination="9by-B0-aRb" id="1q1-pA-gcf"/>
+                                            <outlet property="phoneLbl" destination="fnB-d3-pwK" id="YRr-Wh-Es1"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="gTs-tO-C5m" id="ANh-h4-RFM"/>
                                     <outlet property="delegate" destination="gTs-tO-C5m" id="8dC-SB-L3o"/>

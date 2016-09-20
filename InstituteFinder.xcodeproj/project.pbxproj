@@ -20,6 +20,7 @@
 		2BEC6D0B1D884D2C0037BE32 /* InstituteTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BEC6D071D884D2C0037BE32 /* InstituteTableViewCell.m */; };
 		2BEC6D0C1D884D2C0037BE32 /* InstituteTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2BEC6D081D884D2C0037BE32 /* InstituteTableViewCell.xib */; };
 		2BEC6D0F1D884F800037BE32 /* IFHttpClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BEC6D0E1D884F800037BE32 /* IFHttpClient.m */; };
+		2BFACD8F1D917BFB00B1A00C /* User.png in Resources */ = {isa = PBXBuildFile; fileRef = 2BFACD8E1D917BFB00B1A00C /* User.png */; };
 		6B69EF791D9139F00062376F /* courses.json in Resources */ = {isa = PBXBuildFile; fileRef = 6B69EF781D9139F00062376F /* courses.json */; };
 		6B69EF7B1D913A030062376F /* institutes.json in Resources */ = {isa = PBXBuildFile; fileRef = 6B69EF7A1D913A030062376F /* institutes.json */; };
 		6D83688F1D7FD7FA0078D56D /* AboutUsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D83688E1D7FD7FA0078D56D /* AboutUsViewController.m */; };
@@ -56,6 +57,7 @@
 		2BEC6D081D884D2C0037BE32 /* InstituteTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InstituteTableViewCell.xib; sourceTree = "<group>"; };
 		2BEC6D0D1D884F800037BE32 /* IFHttpClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IFHttpClient.h; sourceTree = "<group>"; };
 		2BEC6D0E1D884F800037BE32 /* IFHttpClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IFHttpClient.m; sourceTree = "<group>"; };
+		2BFACD8E1D917BFB00B1A00C /* User.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = User.png; sourceTree = "<group>"; };
 		516C822A92CA063B33E27D8F /* libPods-InstituteFinder.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-InstituteFinder.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B69EF781D9139F00062376F /* courses.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = courses.json; sourceTree = "<group>"; };
 		6B69EF7A1D913A030062376F /* institutes.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = institutes.json; sourceTree = "<group>"; };
@@ -213,6 +215,7 @@
 			isa = PBXGroup;
 			children = (
 				6DB158471D79951600D535E7 /* left.png */,
+				2BFACD8E1D917BFB00B1A00C /* User.png */,
 				6B69EF781D9139F00062376F /* courses.json */,
 				6B69EF7A1D913A030062376F /* institutes.json */,
 			);
@@ -306,6 +309,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2BFACD8F1D917BFB00B1A00C /* User.png in Resources */,
 				6B69EF7B1D913A030062376F /* institutes.json in Resources */,
 				6B69EF791D9139F00062376F /* courses.json in Resources */,
 				2B001AB61D6F3EE7002FD720 /* LaunchScreen.storyboard in Resources */,

@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -14,29 +15,43 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="92"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OtB-k9-RrV">
-                        <rect key="frame" x="88" y="16" width="159" height="21"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OtB-k9-RrV">
+                        <rect key="frame" x="88" y="16" width="42" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VWg-1i-nmm">
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VWg-1i-nmm">
                         <rect key="frame" x="266" y="31" width="46" height="30"/>
                         <state key="normal" title="Button"/>
                         <connections>
                             <action selector="goToDetailViewWithSender:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="4Za-yb-gl9"/>
                         </connections>
                     </button>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RtY-Vp-gHt">
-                        <rect key="frame" x="8" y="8" width="72" height="84"/>
-                    </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Fw-Fc-Ojm">
-                        <rect key="frame" x="88" y="40" width="153" height="21"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Fw-Fc-Ojm">
+                        <rect key="frame" x="88" y="40" width="42" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="RtY-Vp-gHt">
+                        <rect key="frame" x="8" y="4" width="72" height="84"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="72" id="39g-Vh-t5T"/>
+                            <constraint firstAttribute="height" constant="84" id="e7G-e5-ZrG"/>
+                        </constraints>
+                    </imageView>
                 </subviews>
+                <constraints>
+                    <constraint firstItem="8Fw-Fc-Ojm" firstAttribute="leading" secondItem="OtB-k9-RrV" secondAttribute="leading" id="FQ5-YD-mSw"/>
+                    <constraint firstItem="RtY-Vp-gHt" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="Hr7-qM-wDA"/>
+                    <constraint firstItem="VWg-1i-nmm" firstAttribute="centerY" secondItem="RtY-Vp-gHt" secondAttribute="centerY" id="MZw-ff-rQN"/>
+                    <constraint firstItem="OtB-k9-RrV" firstAttribute="leading" secondItem="RtY-Vp-gHt" secondAttribute="trailing" constant="8" id="NyK-VB-UtZ"/>
+                    <constraint firstItem="OtB-k9-RrV" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="8" id="XA6-FV-ie0"/>
+                    <constraint firstItem="8Fw-Fc-Ojm" firstAttribute="top" secondItem="OtB-k9-RrV" secondAttribute="bottom" constant="3" id="atP-CM-ITO"/>
+                    <constraint firstAttribute="leadingMargin" secondItem="RtY-Vp-gHt" secondAttribute="leading" id="d2f-ki-TPT"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="VWg-1i-nmm" secondAttribute="trailing" id="mHm-v7-PNo"/>
+                </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="imageview" destination="RtY-Vp-gHt" id="pVT-ok-Az4"/>

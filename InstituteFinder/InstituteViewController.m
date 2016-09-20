@@ -64,9 +64,10 @@ success:^(NSArray *result) {
 failure:^(NSError *error) {
     
 }];
+
+//    self
     
-    
-    [self.tableView registerNib:[UINib nibWithNibName:@"InstituteTableViewCell" bundle:nil] forCellReuseIdentifier:@"InstituteCell"];
+//    [self.tableView registerNib:[UINib nibWithNibName:@"InstituteTableViewCell" bundle:nil] forCellReuseIdentifier:@"InstituteCell"];
     
     // Do any additional setup after loading the view.
 }

@@ -8,7 +8,10 @@
 
 #import "IFHttpClient.h"
 
-static NSString *const kBaseUrl = @"http://harinaths-mac-mini.local:8000/";
+//static NSString *const kBaseUrl = @"http://harinaths-mac-mini.local:8000/";
+
+static NSString *const kBaseUrl = @"http://asquares-mac-mini-2.local:8000/";
+
 
 @implementation IFHttpClient
 
