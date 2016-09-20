@@ -49,7 +49,7 @@ success:^(NSArray *result) {
             institute.phoneNumber=[[self.jsonInstitutesArr objectAtIndex:i]valueForKey:@"phone number"];
             institute.courses=[[self.jsonInstitutesArr objectAtIndex:i]valueForKey:@"courses"];
             institute.address=[[self.jsonInstitutesArr objectAtIndex:i]valueForKey:@"address"];
-             institute.imageurl=[[self.jsonInstitutesArr objectAtIndex:i]valueForKey:@"imageurl"];
+             institute.imageurl=[[self.jsonInstitutesArr objectAtIndex:i]valueForKey:@"url"];
             
             [self.InstitutesArr addObject:institute];
             

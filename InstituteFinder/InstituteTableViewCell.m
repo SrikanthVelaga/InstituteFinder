@@ -33,12 +33,12 @@
 }
 
 - (void)updateCellAtIndexPath:(NSIndexPath *)indexPath {
- //   NSData *imgData = [NSData dataWithContentsOfURL:[NSURL URLWithString:@"http://1.bp.blogspot.com/-MJ48E1M7xk8/VmrdxaGjk_I/AAAAAAAABjM/khZ4ODT7eFg/s1600/Maheshbabu-Profile.jpg"]];
-  //  NSData *imgData = [NSData dataWithContentsOfURL:[NSURL URLWithString:self.institute.imageurl]];
+  
+    NSData *imgData = [NSData dataWithContentsOfURL:[NSURL URLWithString:self.institute.imageurl]];
 
     self.nameLbl.text = self.institute.name;
     self.phoneLbl.text = self.institute.phoneNumber;
-  //  self.imageview.image=[UIImage imageWithData:imgData];
+    self.imageview.image=[UIImage imageWithData:imgData];
     
    }
 
