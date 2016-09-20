@@ -22,7 +22,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-   
+    
     [self PrepareView];
     // Do any additional setup after loading the view.
 }
@@ -33,8 +33,10 @@
     self.EmailLbl.text= self.InstituteDetailArr.email;
     self.CoursesLbl.text =[NSString stringWithFormat:@"%@",self.InstituteDetailArr.courses];
     self.AddressLbl.text=self.InstituteDetailArr.address;
-    
+    [self.AddressLbl sizeToFit];
+    [self.AddressLbl setNeedsDisplay];
 
+    NSLog(@"cmg address is ::%@",self.InstituteDetailArr.address);
    
 }
 - (void)didReceiveMemoryWarning {

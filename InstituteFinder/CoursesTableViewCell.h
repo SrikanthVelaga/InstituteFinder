@@ -7,8 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-
 @interface CoursesTableViewCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UILabel *nameLbl;
-
 @end

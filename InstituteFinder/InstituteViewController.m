@@ -8,9 +8,9 @@
 
 #import "InstituteViewController.h"
 #import "InstituteDetailViewController.h"
-#import "HttpClient.h"
 #import "Institute.h"
 #import "InstituteTableViewCell.h"
+#import "IFHttpClient.h"
 
 @interface InstituteViewController () <InstituteViewControllerProtocol>
 
@@ -25,26 +25,23 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self InitializedObjects];
     [self PrepareView];
 }
-
+- (void)InitializedObjects
+{
+    _jsonInstitutesArr=[[NSMutableArray alloc]init];
+    _InstitutesArr = [[NSMutableArray alloc] init];
+    
+}
 - (void)PrepareView{
-    self.InstitutesArr=[[NSMutableArray alloc]init];
-    HttpClient *client = [[HttpClient alloc]init];
-    NSString *urlStr = @"http://asquares-mac-mini-2.local:8000/institutesnames.json";
-    [client getServiceCall:urlStr andCompletion:^(id json, NSError *error) {
-        if (error) {
-            NSLog(@"%@",[error localizedDescription]);
-        }
-        if ([json isKindOfClass:[NSArray class]]) {
-            self.jsonInstitutesArr=[[NSMutableArray alloc]init];
-            [self.jsonInstitutesArr addObjectsFromArray:json];
-           
-
-        }
-        self.jsonInstitutesArr = [self.jsonInstitutesArr filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"(ANY courses LIKE[cd] %@)", self.seletedcoursestr]];
-        
+    [[IFHttpClient sharedHttpClient]getInstitutesWithParameters:nil
+success:^(NSArray *result) {
+    if ([result isKindOfClass:[NSArray class]]) {
+        [self.jsonInstitutesArr addObjectsFromArray:result];
         NSLog(@"json institutes%@",self.jsonInstitutesArr);
+        _jsonInstitutesArr = [self.jsonInstitutesArr filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"(ANY courses LIKE[cd] %@)", self.seletedcoursestr]];
+        
         for (int i=0; i<self.jsonInstitutesArr.count; i++) {
             Institute *institute = [[Institute alloc]init];
             institute.name=[[self.jsonInstitutesArr objectAtIndex:i]valueForKey:@"name"];
@@ -52,15 +49,21 @@
             institute.phoneNumber=[[self.jsonInstitutesArr objectAtIndex:i]valueForKey:@"phone number"];
             institute.courses=[[self.jsonInstitutesArr objectAtIndex:i]valueForKey:@"courses"];
             institute.address=[[self.jsonInstitutesArr objectAtIndex:i]valueForKey:@"address"];
-            
+             institute.imageurl=[[self.jsonInstitutesArr objectAtIndex:i]valueForKey:@"url"];
             
             [self.InstitutesArr addObject:institute];
             
-            [self.tableView reloadData];
-            
         }
+        [self.tableView reloadData];
         
-            }];
+        
+
+
+    }
+}
+failure:^(NSError *error) {
+    
+}];
     
     
     [self.tableView registerNib:[UINib nibWithNibName:@"InstituteTableViewCell" bundle:nil] forCellReuseIdentifier:@"InstituteCell"];
