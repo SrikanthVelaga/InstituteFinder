@@ -8,7 +8,7 @@
 
 #import "IFHttpClient.h"
 
-static NSString *const kBaseUrl = @"http://asquares-mac-mini-2.local:8000/";
+static NSString *const kBaseUrl = @"http://harinaths-mac-mini.local:8000/";
 
 @implementation IFHttpClient
 
@@ -30,11 +30,23 @@ static NSString *const kBaseUrl = @"http://asquares-mac-mini-2.local:8000/";
 
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         success(responseObject);
+        
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         failure(error);
-    }];
+           }];
     
 }
-
+- (void)getInstitutesWithParameters:(NSDictionary *)parameters success:(void (^)(NSArray *result))success failure:(void (^)(NSError *error))failure
+{
+    [self GET:@"institutes.json" parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
+        
+    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        success(responseObject);
+    }
+      failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+          failure(error);
+          
+      }];
+}
 
 @end

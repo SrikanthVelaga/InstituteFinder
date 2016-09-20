@@ -13,4 +13,6 @@
 + (IFHttpClient *)sharedHttpClient;
 
 - (void)getCoursesWithParameters:(NSDictionary *)parameters success:(void (^)(NSArray *result))success failure:(void (^)(NSError *error))failure;
+- (void)getInstitutesWithParameters:(NSDictionary *)parameters success:(void (^)(NSArray *result))success failure:(void (^)(NSError *error))failure;
+
 @end

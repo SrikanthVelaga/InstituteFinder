@@ -13,11 +13,12 @@
 #import "CoursesTableViewCell.h"
 #import "IFHttpClient.h"
 
-@interface CoursesViewController ()
+@interface CoursesViewController (){
+    
+}
 @property (weak, nonatomic) IBOutlet UISearchBar *SearchBar;
-
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
-@property(nonatomic,strong)NSMutableArray *jsonArr;
+@property(nonatomic,strong)NSMutableArray *coursesArr;
 @property(nonatomic,strong)NSMutableArray *filteredArr;
 @end
 
@@ -26,31 +27,30 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self InitializedObjects];
     [self PrepareView];
-//    [self.tableView reloadData];
-
     
 }
+- (void)InitializedObjects
+{
+  _coursesArr=[[NSMutableArray alloc]init];
+    _filteredArr = [[NSMutableArray alloc] init];
 
+}
 -(void)PrepareView
 {
     
     [[IFHttpClient sharedHttpClient] getCoursesWithParameters:nil success:^(NSArray *result) {
         if ([result isKindOfClass:[NSArray class]]) {
-            self.jsonArr=[[NSMutableArray alloc]init];
-            [self.jsonArr addObjectsFromArray:result];
-            
+            [self.coursesArr addObjectsFromArray:result];
+             NSLog(@"JSON %@",self.coursesArr);
+             [self.tableView reloadData];
         }
-        NSLog(@"JSON %@",self.jsonArr);
-        [self.tableView reloadData];
-
-        
-    } failure:^(NSError *error) {
+       } failure:^(NSError *error) {
         
     }];
+     [self.tableView registerNib:[UINib nibWithNibName:@"CoursesTableViewCell" bundle:nil] forCellReuseIdentifier:@"CoursesCell"];
 
-    //self.tableView.backgroundColor=[UIColor orangeColor];
-    // Do any additional setup after loading the view, typically from a nib.
 }
 #pragma mark custom methods
     - (void)didReceiveMemoryWarning {
@@ -78,9 +78,8 @@
     else
     {
         isFiltered =YES;
-        _filteredArr = [[NSMutableArray alloc] init];
         
-        for (NSString* str in _jsonArr)
+        for (NSString* str in _coursesArr)
         {
             NSRange nameRange = [str rangeOfString:text options:NSCaseInsensitiveSearch];
             
@@ -101,31 +100,29 @@
         return self.filteredArr.count;
     }
     else
-    return self.jsonArr.count;
+    return self.coursesArr.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    CoursesTableViewCell *coursesTableViewCell=(CoursesTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"CoursesCell" forIndexPath:indexPath];
+    if (isFiltered){
+        
+        coursesTableViewCell.nameLbl.text=[self.filteredArr objectAtIndex:indexPath.row];
+        
+        
     
-    CoursesTableViewCell *cell=nil;
-    cell=(CoursesTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"CoursesCell"];
-    if (cell==nil)
+    }else
     {
-        NSArray *nib=[[NSBundle mainBundle]loadNibNamed:@"CoursesTableViewCell" owner:self options:nil];
-        cell=[nib objectAtIndex:0];
-    }
-    if (isFiltered) {
-        cell.nameLbl.text=[self.filteredArr objectAtIndex:indexPath.row];
-        cell.backgroundColor=[UIColor orangeColor];
-    }else {
-        cell.nameLbl.text=[self.jsonArr objectAtIndex:indexPath.row];
-        cell.backgroundColor=[UIColor orangeColor];
-    }
-    return cell;
+        coursesTableViewCell.nameLbl.text=[self.coursesArr objectAtIndex:indexPath.row];
+
+           }
+    return coursesTableViewCell;
+    
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSString *str=[self.jsonArr objectAtIndex:indexPath.row];
+    NSString *str=[_coursesArr objectAtIndex:indexPath.row];
     [self performSegueWithIdentifier:@"institutes" sender:str];
 }
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender

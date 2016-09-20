@@ -7,8 +7,11 @@
 //
 
 #import "InstituteTableViewCell.h"
+#import "IFHttpClient.h"
 
 @interface InstituteTableViewCell ()
+
+@property (weak, nonatomic) IBOutlet UIImageView *imageview;
 
 @property (weak, nonatomic) IBOutlet UILabel *nameLbl;
 @property (weak, nonatomic) IBOutlet UILabel *phoneLbl;
@@ -30,11 +33,14 @@
 }
 
 - (void)updateCellAtIndexPath:(NSIndexPath *)indexPath {
-    
+ //   NSData *imgData = [NSData dataWithContentsOfURL:[NSURL URLWithString:@"http://1.bp.blogspot.com/-MJ48E1M7xk8/VmrdxaGjk_I/AAAAAAAABjM/khZ4ODT7eFg/s1600/Maheshbabu-Profile.jpg"]];
+  //  NSData *imgData = [NSData dataWithContentsOfURL:[NSURL URLWithString:self.institute.imageurl]];
+
     self.nameLbl.text = self.institute.name;
     self.phoneLbl.text = self.institute.phoneNumber;
+  //  self.imageview.image=[UIImage imageWithData:imgData];
     
-}
+   }
 
 - (IBAction)goToDetailViewWithSender:(id)sender {
     
