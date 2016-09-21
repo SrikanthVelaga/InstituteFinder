@@ -30,6 +30,8 @@
         [clientsEntity setValue:[obj valueForKey:@"address"] forKey:@"address"];
         [clientsEntity setValue:[obj valueForKey:@"url"] forKey:@"url"];
         
+        completion((IFInsitute *)clientsEntity);
+        
     }];
     
     
