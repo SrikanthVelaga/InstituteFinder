@@ -14,7 +14,9 @@
 		2B001AB11D6F3EE7002FD720 /* InstituteFinder.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2B001AAF1D6F3EE7002FD720 /* InstituteFinder.xcdatamodeld */; };
 		2B001AB31D6F3EE7002FD720 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2B001AB21D6F3EE7002FD720 /* Assets.xcassets */; };
 		2B001AB61D6F3EE7002FD720 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B001AB41D6F3EE7002FD720 /* LaunchScreen.storyboard */; };
-		2B171C461D82F86F0081E0CB /* Institute.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B171C441D82F86F0081E0CB /* Institute.m */; };
+		2BDFABC21D92DC56001FC2F1 /* IFInsitute+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BDFABBF1D92DC56001FC2F1 /* IFInsitute+CoreDataProperties.m */; };
+		2BDFABC31D92DC56001FC2F1 /* IFInsitute.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BDFABC11D92DC56001FC2F1 /* IFInsitute.m */; };
+		2BDFABC61D92DDE9001FC2F1 /* Institute.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BDFABC51D92DDE9001FC2F1 /* Institute.m */; };
 		2BEC6D091D884D2C0037BE32 /* CoursesTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BEC6D041D884D2C0037BE32 /* CoursesTableViewCell.m */; };
 		2BEC6D0A1D884D2C0037BE32 /* CoursesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2BEC6D051D884D2C0037BE32 /* CoursesTableViewCell.xib */; };
 		2BEC6D0B1D884D2C0037BE32 /* InstituteTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BEC6D071D884D2C0037BE32 /* InstituteTableViewCell.m */; };
@@ -47,8 +49,12 @@
 		2B001AB21D6F3EE7002FD720 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2B001AB51D6F3EE7002FD720 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2B001AB71D6F3EE7002FD720 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2B171C441D82F86F0081E0CB /* Institute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Institute.m; sourceTree = "<group>"; };
-		2B171C451D82F86F0081E0CB /* Institute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Institute.h; sourceTree = "<group>"; };
+		2BDFABBE1D92DC56001FC2F1 /* IFInsitute+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "IFInsitute+CoreDataProperties.h"; sourceTree = "<group>"; };
+		2BDFABBF1D92DC56001FC2F1 /* IFInsitute+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "IFInsitute+CoreDataProperties.m"; sourceTree = "<group>"; };
+		2BDFABC01D92DC56001FC2F1 /* IFInsitute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IFInsitute.h; sourceTree = "<group>"; };
+		2BDFABC11D92DC56001FC2F1 /* IFInsitute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IFInsitute.m; sourceTree = "<group>"; };
+		2BDFABC41D92DDE9001FC2F1 /* Institute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Institute.h; sourceTree = "<group>"; };
+		2BDFABC51D92DDE9001FC2F1 /* Institute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Institute.m; sourceTree = "<group>"; };
 		2BEC6D031D884D2C0037BE32 /* CoursesTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoursesTableViewCell.h; sourceTree = "<group>"; };
 		2BEC6D041D884D2C0037BE32 /* CoursesTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoursesTableViewCell.m; sourceTree = "<group>"; };
 		2BEC6D051D884D2C0037BE32 /* CoursesTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CoursesTableViewCell.xib; sourceTree = "<group>"; };
@@ -175,8 +181,12 @@
 		6D8841791D86BAF700C17D4C /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				2B171C451D82F86F0081E0CB /* Institute.h */,
-				2B171C441D82F86F0081E0CB /* Institute.m */,
+				2BDFABC41D92DDE9001FC2F1 /* Institute.h */,
+				2BDFABC51D92DDE9001FC2F1 /* Institute.m */,
+				2BDFABBE1D92DC56001FC2F1 /* IFInsitute+CoreDataProperties.h */,
+				2BDFABBF1D92DC56001FC2F1 /* IFInsitute+CoreDataProperties.m */,
+				2BDFABC01D92DC56001FC2F1 /* IFInsitute.h */,
+				2BDFABC11D92DC56001FC2F1 /* IFInsitute.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -380,9 +390,10 @@
 				2B001AAB1D6F3EE7002FD720 /* CoursesViewController.m in Sources */,
 				2BEC6D0B1D884D2C0037BE32 /* InstituteTableViewCell.m in Sources */,
 				6DB1589F1D7A111F00D535E7 /* ACFloatingTextField.m in Sources */,
+				2BDFABC21D92DC56001FC2F1 /* IFInsitute+CoreDataProperties.m in Sources */,
 				6D8368951D800C970078D56D /* InstituteViewController.m in Sources */,
 				6DB158431D79906400D535E7 /* leftViewController.m in Sources */,
-				2B171C461D82F86F0081E0CB /* Institute.m in Sources */,
+				2BDFABC61D92DDE9001FC2F1 /* Institute.m in Sources */,
 				2BEC6D0F1D884F800037BE32 /* IFHttpClient.m in Sources */,
 				6D8368921D7FD9C00078D56D /* ContactUsViewController.m in Sources */,
 				6D8368981D800CBC0078D56D /* InstituteDetailViewController.m in Sources */,
@@ -392,6 +403,7 @@
 				2B001AA51D6F3EE7002FD720 /* main.m in Sources */,
 				6DF68B5B1D884B6C000E721A /* HttpClient.m in Sources */,
 				6D83688F1D7FD7FA0078D56D /* AboutUsViewController.m in Sources */,
+				2BDFABC31D92DC56001FC2F1 /* IFInsitute.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

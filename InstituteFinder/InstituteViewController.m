@@ -11,6 +11,8 @@
 #import "Institute.h"
 #import "InstituteTableViewCell.h"
 #import "IFHttpClient.h"
+#import "IFInsitute.h"
+#import "AppDelegate.h"
 
 @interface InstituteViewController () <InstituteViewControllerProtocol>
 
@@ -40,6 +42,15 @@ success:^(NSArray *result) {
     if ([result isKindOfClass:[NSArray class]]) {
         [self.jsonInstitutesArr addObjectsFromArray:result];
         NSLog(@"json institutes%@",self.jsonInstitutesArr);
+        
+        AppDelegate *delegate = [[UIApplication sharedApplication]  delegate];
+        
+        [IFInsitute insertInstituteWithInstituteData:self.jsonInstitutesArr context:[delegate managedObjectContext] withCompletionHandler:^(IFInsitute * _Nonnull institute) {
+            
+            NSLog(@"Data Saved");
+            
+        }];
+        
         _jsonInstitutesArr = [self.jsonInstitutesArr filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"(ANY courses LIKE[cd] %@)", self.seletedcoursestr]];
         
         for (int i=0; i<self.jsonInstitutesArr.count; i++) {
