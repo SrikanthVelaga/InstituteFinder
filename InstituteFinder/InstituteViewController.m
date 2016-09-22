@@ -44,27 +44,40 @@ success:^(NSArray *result) {
     if ([result isKindOfClass:[NSArray class]]) {
         [self.jsonInstitutesArr addObjectsFromArray:result];
         NSLog(@"json institutes%@",self.jsonInstitutesArr);
-         _jsonInstitutesArr = [[self.jsonInstitutesArr filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"(ANY courses LIKE[cd] %@)", self.seletedcoursestr]] mutableCopy];
+        
+        __block NSPredicate *predicate = [NSPredicate predicateWithFormat:@"(ANY courses LIKE[cd] %@)", self.seletedcoursestr];
+        
+         _jsonInstitutesArr = [[self.jsonInstitutesArr filteredArrayUsingPredicate:predicate] mutableCopy];
         
          NSManagedObjectContext *managedContext = ((AppDelegate *)[UIApplication sharedApplication].delegate).managedObjectContext;
-        for (int i=0; i<self.jsonInstitutesArr.count; i++) {
-        IFInsitute *iFInsitute=[NSEntityDescription insertNewObjectForEntityForName:@"IFInsitute" inManagedObjectContext:managedContext];
-        iFInsitute.name=[[self.jsonInstitutesArr objectAtIndex:i]valueForKey:@"name"];
-            iFInsitute.email=[[self.jsonInstitutesArr objectAtIndex:i]valueForKey:@"email"];
-            iFInsitute.phoneNumber=[[self.jsonInstitutesArr objectAtIndex:i]valueForKey:@"phone number"];
-           iFInsitute.courses=[[self.jsonInstitutesArr objectAtIndex:i]valueForKey:@"courses"];
-            iFInsitute.address=[[self.jsonInstitutesArr objectAtIndex:i]valueForKey:@"address"];
-            iFInsitute.imageurl=[[self.jsonInstitutesArr objectAtIndex:i]valueForKey:@"url"];
-            [_coreDataArr addObject:iFInsitute];
+    
+        AppDelegate *delegate = [[UIApplication sharedApplication]  delegate];
+        
+        [IFInsitute insertInstituteWithInstituteData:self.jsonInstitutesArr context:[delegate managedObjectContext] withCompletionHandler:^(IFInsitute * _Nonnull institute) {
 
-        }
-//        AppDelegate *delegate = [[UIApplication sharedApplication]  delegate];
-//        [IFInsitute insertInstituteWithInstituteData:self.jsonInstitutesArr context:[delegate managedObjectContext] withCompletionHandler:^(IFInsitute * _Nonnull institute) {
-//            
-//            NSLog(@"Data Saved");
-//            
-//        }];
-//        
+            
+            NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:@"IFInsitute"];
+//            fetchRequest.resultType = NSCountResultType;
+            NSError *fetchError = nil;
+            
+//            [fetchRequest setPredicate:predicate];
+            
+//            NSUInteger itemsCount = [managedContext countForFetchRequest:fetchRequest error:&fetchError];
+//            NSLog(@"Items count %lu", (unsigned long)itemsCount);
+            
+            NSError *error = nil;
+
+            _coreDataArr = [[managedContext executeFetchRequest:fetchRequest error:&error] mutableCopy];
+
+            [self.tableView reloadData];
+
+//            if (itemsCount == NSNotFound) {
+//                NSLog(@"Fetch error: %@", fetchError);
+//            }
+            
+            
+        }];
+        
 //        _jsonInstitutesArr = [self.jsonInstitutesArr filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"(ANY courses LIKE[cd] %@)", self.seletedcoursestr]];
 //        
 //        for (int i=0; i<self.jsonInstitutesArr.count; i++) {

@@ -16,7 +16,7 @@
 {
     [instituteData enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
        
-        NSManagedObject *clientsEntity = [NSEntityDescription
+        IFInsitute *clientsEntity = [NSEntityDescription
                                           insertNewObjectForEntityForName:@"IFInsitute"
                                           inManagedObjectContext:defaultManagedObjectContext];
         
@@ -28,9 +28,16 @@
         [clientsEntity setValue:[obj valueForKey:@"courses"] forKey:@"courses"];
 
         [clientsEntity setValue:[obj valueForKey:@"address"] forKey:@"address"];
-        [clientsEntity setValue:[obj valueForKey:@"url"] forKey:@"url"];
+        [clientsEntity setValue:[obj valueForKey:@"url"] forKey:@"imageurl"];
         
-        completion((IFInsitute *)clientsEntity);
+        NSError *error = nil;
+        
+        if ([defaultManagedObjectContext save:&error]) {
+            completion(clientsEntity);
+        }else {
+            NSLog(@"Whoops, couldn't save: %@", [error localizedDescription]);
+        }
+        
         
     }];
     
