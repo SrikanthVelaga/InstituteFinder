@@ -19,6 +19,7 @@
 @property(nonatomic,strong)NSMutableArray *jsonInstitutesArr;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property(nonatomic,strong)NSMutableArray *InstitutesArr;
+@property(nonatomic,strong)NSMutableArray *coreDataArr;
 
 
 @end
@@ -34,6 +35,7 @@
 {
     _jsonInstitutesArr=[[NSMutableArray alloc]init];
     _InstitutesArr = [[NSMutableArray alloc] init];
+    _coreDataArr=[[NSMutableArray alloc]init];
     
 }
 - (void)PrepareView{
@@ -42,29 +44,41 @@ success:^(NSArray *result) {
     if ([result isKindOfClass:[NSArray class]]) {
         [self.jsonInstitutesArr addObjectsFromArray:result];
         NSLog(@"json institutes%@",self.jsonInstitutesArr);
+         _jsonInstitutesArr = [[self.jsonInstitutesArr filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"(ANY courses LIKE[cd] %@)", self.seletedcoursestr]] mutableCopy];
         
-        AppDelegate *delegate = [[UIApplication sharedApplication]  delegate];
-        
-        [IFInsitute insertInstituteWithInstituteData:self.jsonInstitutesArr context:[delegate managedObjectContext] withCompletionHandler:^(IFInsitute * _Nonnull institute) {
-            
-            NSLog(@"Data Saved");
-            
-        }];
-        
-        _jsonInstitutesArr = [self.jsonInstitutesArr filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"(ANY courses LIKE[cd] %@)", self.seletedcoursestr]];
-        
+         NSManagedObjectContext *managedContext = ((AppDelegate *)[UIApplication sharedApplication].delegate).managedObjectContext;
         for (int i=0; i<self.jsonInstitutesArr.count; i++) {
-            Institute *institute = [[Institute alloc]init];
-            institute.name=[[self.jsonInstitutesArr objectAtIndex:i]valueForKey:@"name"];
-            institute.email=[[self.jsonInstitutesArr objectAtIndex:i]valueForKey:@"email"];
-            institute.phoneNumber=[[self.jsonInstitutesArr objectAtIndex:i]valueForKey:@"phone number"];
-            institute.courses=[[self.jsonInstitutesArr objectAtIndex:i]valueForKey:@"courses"];
-            institute.address=[[self.jsonInstitutesArr objectAtIndex:i]valueForKey:@"address"];
-             institute.imageurl=[[self.jsonInstitutesArr objectAtIndex:i]valueForKey:@"url"];
-            
-            [self.InstitutesArr addObject:institute];
-            
+        IFInsitute *iFInsitute=[NSEntityDescription insertNewObjectForEntityForName:@"IFInsitute" inManagedObjectContext:managedContext];
+        iFInsitute.name=[[self.jsonInstitutesArr objectAtIndex:i]valueForKey:@"name"];
+            iFInsitute.email=[[self.jsonInstitutesArr objectAtIndex:i]valueForKey:@"email"];
+            iFInsitute.phoneNumber=[[self.jsonInstitutesArr objectAtIndex:i]valueForKey:@"phone number"];
+           iFInsitute.courses=[[self.jsonInstitutesArr objectAtIndex:i]valueForKey:@"courses"];
+            iFInsitute.address=[[self.jsonInstitutesArr objectAtIndex:i]valueForKey:@"address"];
+            iFInsitute.imageurl=[[self.jsonInstitutesArr objectAtIndex:i]valueForKey:@"url"];
+            [_coreDataArr addObject:iFInsitute];
+
         }
+//        AppDelegate *delegate = [[UIApplication sharedApplication]  delegate];
+//        [IFInsitute insertInstituteWithInstituteData:self.jsonInstitutesArr context:[delegate managedObjectContext] withCompletionHandler:^(IFInsitute * _Nonnull institute) {
+//            
+//            NSLog(@"Data Saved");
+//            
+//        }];
+//        
+//        _jsonInstitutesArr = [self.jsonInstitutesArr filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"(ANY courses LIKE[cd] %@)", self.seletedcoursestr]];
+//        
+//        for (int i=0; i<self.jsonInstitutesArr.count; i++) {
+//            Institute *institute = [[Institute alloc]init];
+//            institute.name=[[self.jsonInstitutesArr objectAtIndex:i]valueForKey:@"name"];
+//            institute.email=[[self.jsonInstitutesArr objectAtIndex:i]valueForKey:@"email"];
+//            institute.phoneNumber=[[self.jsonInstitutesArr objectAtIndex:i]valueForKey:@"phone number"];
+//            institute.courses=[[self.jsonInstitutesArr objectAtIndex:i]valueForKey:@"courses"];
+//            institute.address=[[self.jsonInstitutesArr objectAtIndex:i]valueForKey:@"address"];
+//             institute.imageurl=[[self.jsonInstitutesArr objectAtIndex:i]valueForKey:@"url"];
+//            
+//            [self.InstitutesArr addObject:institute];
+//            
+//        }
         [self.tableView reloadData];
         
         
@@ -89,13 +103,13 @@ failure:^(NSError *error) {
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     
-        return self.InstitutesArr.count;
+        return _coreDataArr.count;
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
     InstituteTableViewCell *instituteTableViewCell=(InstituteTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"InstituteCell" forIndexPath:indexPath];
-    instituteTableViewCell.institute = self.InstitutesArr[indexPath.row];
+    instituteTableViewCell.iFInsitute = _coreDataArr[indexPath.row];
     [instituteTableViewCell updateCellAtIndexPath:indexPath];
     instituteTableViewCell.instituteViewDelegate = self;
     return instituteTableViewCell;
@@ -106,13 +120,14 @@ failure:^(NSError *error) {
     
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    [self performSegueWithIdentifier:@"InstituteDetail" sender:[self.InstitutesArr objectAtIndex:indexPath.row]];
+    [self performSegueWithIdentifier:@"InstituteDetail" sender:[_coreDataArr objectAtIndex:indexPath.row]];
+//    [self performSegueWithIdentifier:@"InstituteDetail" sender:[self.InstitutesArr objectAtIndex:indexPath.row]];
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    InstituteDetailViewController *Institute=[segue destinationViewController];
-    Institute.InstituteDetailArr=sender;
+    InstituteDetailViewController *institute=[segue destinationViewController];
+    institute.InstituteDetailArr=sender;
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

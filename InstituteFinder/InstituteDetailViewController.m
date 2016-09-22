@@ -7,14 +7,14 @@
 //
 
 #import "InstituteDetailViewController.h"
-#import "Institute.h"
-
 @interface InstituteDetailViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *NameLbl;
 @property (weak, nonatomic) IBOutlet UILabel *PhoneLbl;
 @property (weak, nonatomic) IBOutlet UILabel *EmailLbl;
 @property (weak, nonatomic) IBOutlet UILabel *CoursesLbl;
 @property (weak, nonatomic) IBOutlet UILabel *AddressLbl;
+
+
 
 @end
 
@@ -37,7 +37,11 @@
     [self.AddressLbl setNeedsDisplay];
 
     NSLog(@"cmg address is ::%@",self.InstituteDetailArr.address);
+    
    
+    
+
+//   
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="10174" systemVersion="15G31" minimumToolsVersion="Automatic">
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="10174" systemVersion="15G1004" minimumToolsVersion="Automatic">
     <entity name="IFInsitute" representedClassName="IFInsitute" syncable="YES">
         <attribute name="address" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="courses" optional="YES" attributeType="Transformable" syncable="YES"/>
@@ -9,6 +9,6 @@
         <attribute name="phoneNumber" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="IFInsitute" positionX="-5679" positionY="-171" width="128" height="133"/>
+        <element name="IFInsitute" positionX="-5679" positionY="-171" width="128" height="135"/>
     </elements>
 </model>
